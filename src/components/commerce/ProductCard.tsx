@@ -9,12 +9,19 @@ import { useMarket } from "@/lib/market-context";
 import { useWishlist } from "@/lib/wishlist-context";
 import type { Product } from "@/lib/types";
 
+function shortDescription(text: string, max = 100) {
+  if (text.length <= max) return text;
+  return `${text.slice(0, max).trim()}…`;
+}
+
 export function ProductCard({
   product,
   layout = "grid",
+  showDescription = true,
 }: {
   product: Product;
   layout?: "grid" | "list";
+  showDescription?: boolean;
 }) {
   const { marketCode } = useMarket();
   const { has, toggle } = useWishlist();
@@ -36,7 +43,11 @@ export function ProductCard({
                 <span className="text-[10px] uppercase tracking-widest text-cl-muted">New</span>
               )}
               <h3 className="font-serif text-xl">{product.name}</h3>
-              <p className="mt-1 text-[12px] text-cl-muted">{product.description.slice(0, 80)}…</p>
+              {showDescription && (
+                <p className="mt-2 max-w-md text-[12px] leading-relaxed text-cl-muted">
+                  {shortDescription(product.description, 140)}
+                </p>
+              )}
             </div>
             <div className="flex gap-2">
               <button type="button" onClick={() => toggle(product.id)} aria-label="Add to wishlist">
@@ -48,7 +59,8 @@ export function ProductCard({
             </div>
           </div>
           <p className="mt-3 text-[13px]">
-            As low as <span className="font-medium">{formatPrice(price, marketCode)}</span>
+            <span className="text-cl-muted">As low as </span>
+            <span className="font-semibold text-black">{formatPrice(price, marketCode)}</span>
           </p>
         </div>
       </article>
@@ -107,8 +119,14 @@ export function ProductCard({
           )}
         </div>
         <h3 className="mt-4 text-center font-serif text-lg">{product.name}</h3>
-        <p className="mt-1 text-center text-[12px] text-cl-muted">
-          As low as {formatPrice(price, marketCode)}
+        {showDescription && (
+          <p className="mx-auto mt-2 max-w-[220px] text-center text-[11px] leading-relaxed text-cl-muted md:max-w-none">
+            {shortDescription(product.description, 90)}
+          </p>
+        )}
+        <p className="mt-2 text-center text-[13px]">
+          <span className="text-cl-muted">As low as </span>
+          <span className="font-semibold text-black">{formatPrice(price, marketCode)}</span>
         </p>
       </Link>
     </article>

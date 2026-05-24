@@ -96,7 +96,7 @@ export function ProductGallery({
             <button
               type="button"
               onClick={() => go(-1)}
-              className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-black/20 bg-white/90 text-black hover:bg-white"
+              className="absolute left-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-black/20 bg-white/90 text-black hover:bg-white md:flex"
               aria-label="Previous image"
             >
               ‹
@@ -104,7 +104,7 @@ export function ProductGallery({
             <button
               type="button"
               onClick={() => go(1)}
-              className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-black/20 bg-white/90 text-black hover:bg-white"
+              className="absolute right-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-black/20 bg-white/90 text-black hover:bg-white md:flex"
               aria-label="Next image"
             >
               ›
@@ -113,13 +113,13 @@ export function ProductGallery({
         )}
       </div>
       {images.length > 1 && (
-        <div className="mt-4 flex gap-2 overflow-x-auto px-1">
+        <div className="mt-4 flex gap-2 overflow-x-auto px-1 scrollbar-hide">
           {images.map((src, i) => (
             <button
               key={`${src}-${i}`}
               type="button"
               onClick={() => setIndex(i)}
-              className={`relative h-20 w-16 shrink-0 border-2 ${
+              className={`relative h-20 w-16 shrink-0 overflow-hidden rounded-md border-2 ${
                 i === index ? "border-black" : "border-transparent"
               }`}
               aria-label={`View image ${i + 1}`}
@@ -132,7 +132,7 @@ export function ProductGallery({
       )}
       {images.length > 1 && (
         <p className="mt-2 text-center text-[11px] text-cl-muted md:hidden">
-          {index + 1} / {images.length}
+          Swipe to view · {index + 1} / {images.length}
         </p>
       )}
     </div>

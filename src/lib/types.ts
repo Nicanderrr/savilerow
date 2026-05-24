@@ -64,6 +64,8 @@ export type Market = {
   shippingNote: string;
 };
 
+export type FulfillmentMethod = "ship" | "pickup";
+
 export type CartItem = {
   productId: string;
   variantId: string;
@@ -74,6 +76,7 @@ export type CartItem = {
   color?: string;
   quantity: number;
   unitPrice: number;
+  fulfillment?: FulfillmentMethod;
 };
 
 export type BespokeConfig = {

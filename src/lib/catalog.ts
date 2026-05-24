@@ -7,16 +7,20 @@ function makeVariants(
   colors: { id: string; label: string; value: string }[]
 ) {
   const variants = [];
+  let i = 0;
   for (const size of sizes) {
     for (const color of colors) {
+      // Deterministic stock: ~2 sizes per colour run show as sold out
+      const inStock = i % 5 !== 2 && i % 7 !== 4;
       variants.push({
         id: `${size}-${color.id}`,
         sku: `SR-${size}-${color.id}`.toUpperCase(),
         size,
         color: color.value,
         priceModifier: 0,
-        inStock: Math.random() > 0.15,
+        inStock,
       });
+      i += 1;
     }
   }
   return variants;
@@ -32,7 +36,13 @@ const COLORS = {
 };
 
 const SIZES_SUIT = ["36", "38", "40", "42", "44", "46"];
-const SIZES_SHOE = ["39", "40", "41", "42", "43", "44", "45"];
+const SIZES_SHOE = ["38", "39", "40", "41", "42", "43", "44", "45", "46"];
+const SHOE_SIZE_OPTIONS = SIZES_SHOE.map((s) => ({
+  id: s,
+  label: `EU ${s}`,
+  value: s,
+  inStock: true,
+}));
 const SIZES_STD = ["XS", "S", "M", "L", "XL"];
 
 const DEFAULT_SHIPPING =
@@ -197,7 +207,7 @@ export const PRODUCTS: Product[] = [
       ],
     }),
     colors: [COLORS.black, COLORS.burgundy],
-    sizes: SIZES_SHOE.map((s) => ({ id: s, label: s, value: s, inStock: true })),
+    sizes: SHOE_SIZE_OPTIONS,
     variants: makeVariants(SIZES_SHOE, [COLORS.black, COLORS.burgundy]),
     material: "Full-grain calfskin, leather sole",
     care: "Use shoe trees. Polish with neutral cream.",
@@ -241,7 +251,7 @@ export const PRODUCTS: Product[] = [
       ],
     }),
     colors: [COLORS.burgundy, COLORS.black],
-    sizes: SIZES_SHOE.map((s) => ({ id: s, label: s, value: s, inStock: true })),
+    sizes: SHOE_SIZE_OPTIONS,
     variants: makeVariants(SIZES_SHOE, [COLORS.burgundy, COLORS.black]),
     material: "Full-grain leather, rubber inset heel",
     care: "Brush and condition monthly.",
@@ -982,7 +992,7 @@ export const PRODUCTS: Product[] = [
       burgundy: [PHOTOS.oxfordBurgundy1, PHOTOS.oxfordBurgundy2, PHOTOS.oxfordBlack3, PHOTOS.oxfordBlack4, PHOTOS.oxfordBurgundy1, PHOTOS.oxfordBurgundy2],
     }),
     colors: [COLORS.black, COLORS.burgundy],
-    sizes: SIZES_SHOE.map((s) => ({ id: s, label: s, value: s, inStock: true })),
+    sizes: SHOE_SIZE_OPTIONS,
     variants: makeVariants(SIZES_SHOE, [COLORS.black, COLORS.burgundy]),
     material: "Calfskin upper, leather sole",
     care: "Use shoe trees. Polish with neutral cream.",
@@ -1013,7 +1023,7 @@ export const PRODUCTS: Product[] = [
       black: [PHOTOS.loafer2, PHOTOS.loafer1, PHOTOS.loafer3, PHOTOS.loafer1, PHOTOS.loafer2, PHOTOS.loafer3],
     }),
     colors: [COLORS.burgundy, COLORS.black],
-    sizes: SIZES_SHOE.map((s) => ({ id: s, label: s, value: s, inStock: true })),
+    sizes: SHOE_SIZE_OPTIONS,
     variants: makeVariants(SIZES_SHOE, [COLORS.burgundy, COLORS.black]),
     material: "Velvet upper, leather sole",
     care: "Brush nap regularly. Avoid moisture.",
@@ -1074,7 +1084,7 @@ export const PRODUCTS: Product[] = [
       black: [PHOTOS.loafer1, PHOTOS.loafer2, PHOTOS.loafer3, PHOTOS.loafer2, PHOTOS.loafer1, PHOTOS.loafer3],
     }),
     colors: [COLORS.cream, COLORS.black],
-    sizes: SIZES_SHOE.map((s) => ({ id: s, label: s, value: s, inStock: true })),
+    sizes: SHOE_SIZE_OPTIONS,
     variants: makeVariants(SIZES_SHOE, [COLORS.cream, COLORS.black]),
     material: "Calfskin, rubber cup sole",
     care: "Wipe clean. Use protector spray.",
@@ -1675,6 +1685,18 @@ export function getSubcategoriesFor(
 
 export function getImagesForColor(product: Product, color: string): string[] {
   return product.colorImages[color] ?? product.images;
+}
+
+export function getRelatedProducts(
+  product: Product,
+  limit = 8
+): Product[] {
+  return PRODUCTS.filter(
+    (p) =>
+      p.id !== product.id &&
+      p.category === product.category &&
+      p.gender === product.gender
+  ).slice(0, limit);
 }
 
 export const MENU_PROMOS: Record<

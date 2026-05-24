@@ -31,7 +31,9 @@ export function CollectionPage({
     onlyNew: false,
     inStock: false,
   });
-  const [view, setView] = useState<ViewMode>("grid");
+  const [view, setView] = useState<ViewMode>(
+    resolvedCategory === "shoes" ? "list" : "grid"
+  );
   const [activeSub, setActiveSub] = useState<string>("all");
 
   const subcategories = useMemo(
@@ -92,7 +94,7 @@ export function CollectionPage({
               <button
                 type="button"
                 onClick={() => setActiveSub("all")}
-                className={`px-4 py-2 text-[11px] uppercase tracking-[0.18em] transition ${
+                className={`rounded-full px-5 py-2.5 text-[11px] uppercase tracking-[0.18em] transition ${
                   activeSub === "all"
                     ? "border border-black bg-black text-white"
                     : "border border-cl-gray-mid text-black hover:border-black"
@@ -107,7 +109,7 @@ export function CollectionPage({
                 <button
                   type="button"
                   onClick={() => setActiveSub(sub)}
-                  className={`px-4 py-2 text-[11px] uppercase tracking-[0.18em] transition ${
+                  className={`rounded-full px-5 py-2.5 text-[11px] uppercase tracking-[0.18em] transition ${
                     activeSub === sub
                       ? "border border-black bg-black text-white"
                       : "border border-cl-gray-mid text-black hover:border-black"

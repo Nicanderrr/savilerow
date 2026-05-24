@@ -44,7 +44,13 @@ export default function CartPage() {
                 {item.name}
               </Link>
               <p className="text-[12px] text-cl-muted">
-                {[item.color, item.size].filter(Boolean).join(" · ")}
+                {[
+                  item.color,
+                  item.size,
+                  item.fulfillment === "pickup" ? "In-store pickup" : "Ship to me",
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
               </p>
               <div className="mt-auto flex items-center justify-between pt-4">
                 <div className="flex items-center gap-2">

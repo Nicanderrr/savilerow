@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconHeart } from "@/components/icons/LouboutinIcons";
 import { ColorSwatches } from "./ColorSwatches";
+import { FulfillmentSelect, type FulfillmentMethod } from "./FulfillmentSelect";
 import { SizeSelect } from "./SizeSelect";
 import { convertPrice, formatPrice } from "@/lib/format";
 import { getImagesForColor } from "@/lib/catalog";
@@ -22,7 +23,6 @@ export function AddToBagSection({
   product: Product;
   color?: string;
   onColorChange?: (c: string) => void;
-  /** Colour swatches belong on the product detail page only */
   showColour?: boolean;
 }) {
   const { marketCode, market } = useMarket();
@@ -32,20 +32,36 @@ export function AddToBagSection({
   const [internalColor, setInternalColor] = useState(product.colors[0]?.value ?? "");
   const color = controlledColor ?? internalColor;
   const setColor = onColorChange ?? setInternalColor;
-  const [size, setSize] = useState(product.sizes[0]?.value ?? "");
+  const [size, setSize] = useState("");
+  const [fulfillment, setFulfillment] = useState<FulfillmentMethod>("ship");
   const [added, setAdded] = useState(false);
 
-  const variant =
-    product.variants.find((v) => v.size === size && v.color === color) ??
-    product.variants[0];
+  useEffect(() => {
+    setSize("");
+  }, [color, product.id]);
+
+  const needsSize = product.sizes.length > 0;
+
+  const variant = needsSize
+    ? size
+      ? product.variants.find((v) => v.size === size && v.color === color)
+      : undefined
+    : product.variants.find((v) => v.color === color) ?? product.variants[0];
 
   const unitPrice = convertPrice(
     product.price + (variant?.priceModifier ?? 0),
     marketCode
   );
 
+  const sizesWithStock = product.sizes.map((s) => {
+    const match = product.variants.find((v) => v.size === s.value && v.color === color);
+    return { ...s, inStock: match?.inStock ?? s.inStock };
+  });
+
+  const canAdd = Boolean(variant?.inStock && (!needsSize || size));
+
   const handleAdd = () => {
-    if (!variant) return;
+    if (!canAdd || !variant) return;
     const images = getImagesForColor(product, color);
     addItem({
       productId: product.id,
@@ -56,24 +72,20 @@ export function AddToBagSection({
       size: variant.size,
       color: variant.color,
       unitPrice,
+      fulfillment,
     });
     setAdded(true);
     setBagOpen(true);
     setTimeout(() => setAdded(false), 2000);
   };
 
-  const sizesWithStock = product.sizes.map((s) => {
-    const match = product.variants.find((v) => v.size === s.value && v.color === color);
-    return { ...s, inStock: match?.inStock ?? s.inStock };
-  });
-
   return (
     <div className="space-y-8 lg:sticky lg:top-header-total lg:self-start lg:py-8">
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="font-serif text-2xl uppercase md:text-3xl">{product.name}</h1>
-          <p className="mt-2 text-[13px] text-cl-muted">
-            {product.category} — {product.gender}
+          <p className="mt-2 text-[13px] leading-relaxed text-cl-muted">
+            {product.description}
           </p>
         </div>
         <button
@@ -88,7 +100,9 @@ export function AddToBagSection({
 
       <p className="text-[15px]">
         <span className="text-cl-muted">As low as </span>
-        <span className="font-medium">{formatPrice(unitPrice, marketCode)}</span>
+        <span className="text-[17px] font-semibold text-black">
+          {formatPrice(unitPrice, marketCode)}
+        </span>
         {market.vatInclusive && (
           <span className="ml-2 text-[12px] text-cl-muted">VAT incl.</span>
         )}
@@ -103,25 +117,37 @@ export function AddToBagSection({
             onChange={setColor}
           />
         )}
-        {product.sizes.length > 0 && (
+        {needsSize && (
           <SizeSelect
             label="Size"
             options={sizesWithStock}
             value={size}
             onChange={setSize}
+            placeholder="Choose your size"
           />
         )}
+        <FulfillmentSelect value={fulfillment} onChange={setFulfillment} />
       </div>
 
-      <p className="text-[12px] text-cl-muted">{market.shippingNote}</p>
+      <p className="text-[12px] text-cl-muted">
+        {fulfillment === "pickup"
+          ? "Collect from 12 Savile Row, London W1S 3PR. Ready within 2 business days."
+          : market.shippingNote}
+      </p>
 
       <button
         type="button"
         onClick={handleAdd}
-        disabled={!variant?.inStock}
+        disabled={!canAdd}
         className="btn-red hidden w-full md:block"
       >
-        {added ? "Added to bag" : variant?.inStock ? "Add to bag" : "Out of stock"}
+        {added
+          ? "Added to bag"
+          : !size && needsSize
+            ? "Choose your size"
+            : variant?.inStock
+              ? "Add to bag"
+              : "Sold out"}
       </button>
 
       <button type="button" className="btn-outline hidden w-full md:block">
@@ -141,10 +167,16 @@ export function AddToBagSection({
         <button
           type="button"
           onClick={handleAdd}
-          disabled={!variant?.inStock}
+          disabled={!canAdd}
           className="btn-red w-full py-4"
         >
-          {added ? "Added" : variant?.inStock ? "Add to bag" : "Out of stock"}
+          {added
+            ? "Added"
+            : !size && needsSize
+              ? "Choose your size"
+              : variant?.inStock
+                ? "Add to bag"
+                : "Sold out"}
         </button>
       </div>
     </div>
