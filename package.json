@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/verify-images.mjs && next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0 -p $PORT",
     "lint": "eslint",
     "verify:images": "node scripts/verify-images.mjs",
     "download:images": "node scripts/download-product-images.mjs"
