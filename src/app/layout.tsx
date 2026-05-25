@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { Footer } from "@/components/layout/Footer";
-import { ProductSuggestions } from "@/components/layout/ProductSuggestions";
+import { SuggestedProducts } from "@/components/layout/SuggestedProducts";
 import { Header } from "@/components/layout/Header";
 import { SiteChrome } from "@/components/layout/SiteChrome";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -43,7 +43,7 @@ export default function RootLayout({
           <SkipLink />
           <Header />
           {children}
-          <ProductSuggestions />
+          <SuggestedProducts />
           <Footer />
           <SiteChrome />
         </AppProviders>

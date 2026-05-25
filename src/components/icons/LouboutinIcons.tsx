@@ -47,14 +47,6 @@ export function IconBag({ className = "h-5 w-5" }: IconProps) {
   );
 }
 
-export function IconCompare({ className = "h-4 w-4" }: IconProps) {
-  return (
-    <svg className={className} viewBox="0 0 16 16" fill="none" aria-hidden>
-      <path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" strokeWidth="1" />
-    </svg>
-  );
-}
-
 export function IconChevronDown({
   className = "h-4 w-4",
   open = false,
@@ -73,6 +65,14 @@ export function IconChevronDown({
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+export function IconCompare({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" aria-hidden>
+      <path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" strokeWidth="1" />
     </svg>
   );
 }

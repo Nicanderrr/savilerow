@@ -81,7 +81,7 @@ export function Footer() {
               >
                 <span className="text-label text-white">{section.title}</span>
                 <IconChevronDown
-                  className="h-5 w-5 text-white/60"
+                  className="h-4 w-4 text-white/60"
                   open={openId === section.id}
                 />
               </button>

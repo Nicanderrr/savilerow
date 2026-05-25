@@ -1,7 +1,7 @@
 import type { Gender, Product, ProductCategory } from "./types";
 import { CATALOG_ADDITIONS } from "./catalog-additions";
 import { PHOTOS, colorGalleries, gallery } from "./images";
-import { applyProductMedia } from "./product-media";
+import { applyProductImages } from "./product-images";
 
 function makeVariants(
   sizes: string[],
@@ -49,16 +49,7 @@ const SIZES_STD = ["XS", "S", "M", "L", "XL"];
 const DEFAULT_SHIPPING =
   "Complimentary express delivery on orders over $500. International duties may apply.";
 
-function hydrateCatalogProduct(product: Product): Product {
-  let p = product;
-  if (product.variants.length === 0) {
-    const sizes = product.sizes.map((s) => s.value);
-    p = { ...p, variants: makeVariants(sizes, product.colors) };
-  }
-  return applyProductMedia(p);
-}
-
-const RAW_PRODUCTS = [
+export const PRODUCTS: Product[] = [
   {
     id: "1",
     slug: "mayfair-two-piece",
@@ -1589,10 +1580,17 @@ const RAW_PRODUCTS = [
     shippingNote: DEFAULT_SHIPPING,
     tags: ["accessories"],
   },
-  ...CATALOG_ADDITIONS,
-] as Product[];
+  ...CATALOG_ADDITIONS.map(hydrateCatalogProduct),
+];
 
-export const PRODUCTS: Product[] = RAW_PRODUCTS.map(hydrateCatalogProduct);
+function hydrateCatalogProduct(product: Product): Product {
+  if (product.variants.length > 0) return product;
+  const sizes = product.sizes.map((s) => s.value);
+  return {
+    ...product,
+    variants: makeVariants(sizes, product.colors),
+  };
+}
 
 export const CATEGORY_LABELS: Record<ProductCategory, string> = {
   suits: "Suits & Tailoring",
@@ -1657,8 +1655,13 @@ export const GENDER_LABELS: Record<Gender, string> = {
   kids: "Kids",
 };
 
+export function getAllProducts(): Product[] {
+  return PRODUCTS.map(applyProductImages);
+}
+
 export function getProductBySlug(slug: string): Product | undefined {
-  return PRODUCTS.find((p) => p.slug === slug);
+  const p = PRODUCTS.find((item) => item.slug === slug);
+  return p ? applyProductImages(p) : undefined;
 }
 
 export function getProductsByCollection(
@@ -1669,7 +1672,7 @@ export function getProductsByCollection(
     if (gender && p.gender !== gender) return false;
     if (category && p.category !== category) return false;
     return true;
-  });
+  }).map(applyProductImages);
 }
 
 export function getSubcategoriesFor(
@@ -1699,7 +1702,9 @@ export function getRelatedProducts(
       p.id !== product.id &&
       p.category === product.category &&
       p.gender === product.gender
-  ).slice(0, limit);
+  )
+    .slice(0, limit)
+    .map(applyProductImages);
 }
 
 export const MENU_PROMOS: Record<

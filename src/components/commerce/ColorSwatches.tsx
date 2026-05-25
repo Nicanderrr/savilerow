@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { isRemoteImage } from "@/lib/product-images";
 import type { VariantOption } from "@/lib/types";
 
 export function ColorSwatches({
@@ -37,7 +38,14 @@ export function ColorSwatches({
                 title={c.label}
               >
                 {thumb ? (
-                  <Image src={thumb} alt="" fill className="object-cover" sizes="44px" />
+                  <Image
+                    src={thumb}
+                    alt=""
+                    fill
+                    unoptimized={isRemoteImage(thumb)}
+                    className="object-cover"
+                    sizes="44px"
+                  />
                 ) : (
                   <span className="block h-full w-full bg-cl-gray" />
                 )}

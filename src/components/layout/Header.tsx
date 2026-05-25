@@ -67,7 +67,7 @@ export function Header() {
         <div
           className={`mx-auto flex h-header-main max-w-[1600px] items-center justify-between px-4 md:px-8 ${textClass}`}
         >
-          <div className="flex min-w-[80px] items-center md:min-w-[200px]">
+          <div className="flex min-w-[100px] items-center md:min-w-[200px]">
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
@@ -87,25 +87,20 @@ export function Header() {
             Savile Row
           </Link>
 
-          <div className="flex min-w-[120px] items-center justify-end gap-3 md:min-w-[200px] md:gap-5">
-            <Link
-              href="/market"
-              className="shrink-0"
-              aria-label="My account"
-            >
-              <IconAccount />
-            </Link>
+          <div className="flex min-w-[100px] items-center justify-end gap-3 md:min-w-[200px] md:gap-5">
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="shrink-0"
               aria-label="Search"
             >
               <IconSearch />
             </button>
+            <Link href="/market" aria-label="My account">
+              <IconAccount />
+            </Link>
             <Link
               href="/collections/men/suits"
-              className="relative shrink-0"
+              className="relative hidden sm:block"
               aria-label={`My wishlist, ${wishCount} items`}
             >
               <IconHeart />
@@ -118,7 +113,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setBagOpen(true)}
-              className="relative shrink-0"
+              className="relative"
               aria-label={`Shopping bag, ${itemCount} items`}
             >
               <IconBag />

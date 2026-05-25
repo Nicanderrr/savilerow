@@ -9,8 +9,8 @@ import {
   CATEGORY_DESCRIPTIONS,
   CATEGORY_LABELS,
   GENDER_LABELS,
-  PRODUCTS,
   SUBCATEGORY_LABELS,
+  getAllProducts,
   getProductsByCollection,
   getSubcategoriesFor,
 } from "@/lib/catalog";
@@ -31,8 +31,9 @@ export function CollectionPage({
     onlyNew: false,
     inStock: false,
   });
+  const isAllProducts = !resolvedGender && !resolvedCategory;
   const [view, setView] = useState<ViewMode>(
-    resolvedCategory === "shoes" ? "list" : "grid"
+    isAllProducts ? "grid" : resolvedCategory === "shoes" ? "list" : "grid"
   );
   const [activeSub, setActiveSub] = useState<string>("all");
 
@@ -45,7 +46,7 @@ export function CollectionPage({
     let list =
       resolvedGender || resolvedCategory
         ? getProductsByCollection(resolvedGender, resolvedCategory)
-        : PRODUCTS;
+        : getAllProducts();
     if (activeSub !== "all") list = list.filter((p) => p.subcategory === activeSub);
     if (filters.onlyNew) list = list.filter((p) => p.isNew);
     if (filters.inStock) {
@@ -159,13 +160,20 @@ export function CollectionPage({
         ) : (
           <div
             className={
-              view === "grid"
-                ? "grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6"
-                : "flex flex-col gap-8"
+              isAllProducts
+                ? "grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6"
+                : view === "grid"
+                  ? "grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6"
+                  : "grid grid-cols-1 gap-8 md:flex md:flex-col"
             }
           >
             {products.map((p) => (
-              <ProductCard key={p.id} product={p} layout={view} />
+              <ProductCard
+                key={p.id}
+                product={p}
+                layout={isAllProducts ? "grid" : view}
+                framed={isAllProducts}
+              />
             ))}
           </div>
         )}

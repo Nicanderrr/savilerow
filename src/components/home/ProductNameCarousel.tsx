@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { PRODUCTS } from "@/lib/catalog";
+import { getAllProducts } from "@/lib/catalog";
 
-const featured = PRODUCTS.filter((p) => p.isNew).slice(0, 12);
+const featured = getAllProducts().filter((p) => p.isNew).slice(0, 12);
 
 export function ProductNameCarousel() {
   return (
