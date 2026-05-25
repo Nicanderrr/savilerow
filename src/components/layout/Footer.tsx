@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { IconChevronDown } from "@/components/icons/LouboutinIcons";
 import { MarketSelector } from "@/components/market/MarketSelector";
 import { useUi } from "@/lib/ui-context";
 
@@ -79,9 +80,10 @@ export function Footer() {
                 aria-expanded={openId === section.id}
               >
                 <span className="text-label text-white">{section.title}</span>
-                <span className="text-lg text-white/60" aria-hidden>
-                  {openId === section.id ? "−" : "+"}
-                </span>
+                <IconChevronDown
+                  className="h-5 w-5 text-white/60"
+                  open={openId === section.id}
+                />
               </button>
               <ul
                 className={`space-y-2 overflow-hidden pb-4 ${

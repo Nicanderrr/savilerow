@@ -55,6 +55,28 @@ export function IconCompare({ className = "h-4 w-4" }: IconProps) {
   );
 }
 
+export function IconChevronDown({
+  className = "h-4 w-4",
+  open = false,
+}: IconProps & { open?: boolean }) {
+  return (
+    <svg
+      className={`${className} transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M6 9l6 6 6-6"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function IconChevronRight({ className = "h-3 w-3" }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 8 12" fill="none" aria-hidden>

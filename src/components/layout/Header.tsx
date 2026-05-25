@@ -67,7 +67,7 @@ export function Header() {
         <div
           className={`mx-auto flex h-header-main max-w-[1600px] items-center justify-between px-4 md:px-8 ${textClass}`}
         >
-          <div className="flex min-w-[120px] items-center gap-4 md:min-w-[200px]">
+          <div className="flex min-w-[80px] items-center md:min-w-[200px]">
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
@@ -76,14 +76,6 @@ export function Header() {
             >
               <IconMenu />
               <span className="hidden text-label md:inline">Menu</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setSearchOpen(true)}
-              className="md:hidden"
-              aria-label="Search"
-            >
-              <IconSearch />
             </button>
           </div>
 
@@ -95,21 +87,25 @@ export function Header() {
             Savile Row
           </Link>
 
-          <div className="flex min-w-[120px] items-center justify-end gap-4 md:min-w-[200px] md:gap-5">
+          <div className="flex min-w-[120px] items-center justify-end gap-3 md:min-w-[200px] md:gap-5">
+            <Link
+              href="/market"
+              className="shrink-0"
+              aria-label="My account"
+            >
+              <IconAccount />
+            </Link>
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="hidden md:block"
+              className="shrink-0"
               aria-label="Search"
             >
               <IconSearch />
             </button>
-            <Link href="/market" className="hidden md:block" aria-label="My account">
-              <IconAccount />
-            </Link>
             <Link
               href="/collections/men/suits"
-              className="relative"
+              className="relative shrink-0"
               aria-label={`My wishlist, ${wishCount} items`}
             >
               <IconHeart />
@@ -122,7 +118,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setBagOpen(true)}
-              className="relative"
+              className="relative shrink-0"
               aria-label={`Shopping bag, ${itemCount} items`}
             >
               <IconBag />

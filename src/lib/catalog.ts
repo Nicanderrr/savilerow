@@ -1,6 +1,7 @@
 import type { Gender, Product, ProductCategory } from "./types";
 import { CATALOG_ADDITIONS } from "./catalog-additions";
 import { PHOTOS, colorGalleries, gallery } from "./images";
+import { applyProductMedia } from "./product-media";
 
 function makeVariants(
   sizes: string[],
@@ -48,7 +49,16 @@ const SIZES_STD = ["XS", "S", "M", "L", "XL"];
 const DEFAULT_SHIPPING =
   "Complimentary express delivery on orders over $500. International duties may apply.";
 
-export const PRODUCTS: Product[] = [
+function hydrateCatalogProduct(product: Product): Product {
+  let p = product;
+  if (product.variants.length === 0) {
+    const sizes = product.sizes.map((s) => s.value);
+    p = { ...p, variants: makeVariants(sizes, product.colors) };
+  }
+  return applyProductMedia(p);
+}
+
+const RAW_PRODUCTS = [
   {
     id: "1",
     slug: "mayfair-two-piece",
@@ -1579,17 +1589,10 @@ export const PRODUCTS: Product[] = [
     shippingNote: DEFAULT_SHIPPING,
     tags: ["accessories"],
   },
-  ...CATALOG_ADDITIONS.map(hydrateCatalogProduct),
-];
+  ...CATALOG_ADDITIONS,
+] as Product[];
 
-function hydrateCatalogProduct(product: Product): Product {
-  if (product.variants.length > 0) return product;
-  const sizes = product.sizes.map((s) => s.value);
-  return {
-    ...product,
-    variants: makeVariants(sizes, product.colors),
-  };
-}
+export const PRODUCTS: Product[] = RAW_PRODUCTS.map(hydrateCatalogProduct);
 
 export const CATEGORY_LABELS: Record<ProductCategory, string> = {
   suits: "Suits & Tailoring",
