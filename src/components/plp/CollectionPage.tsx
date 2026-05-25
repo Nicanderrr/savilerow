@@ -5,6 +5,7 @@ import { ProductCard } from "@/components/commerce/ProductCard";
 import { BackNav } from "@/components/layout/BackNav";
 import { FilterDrawer } from "./FilterDrawer";
 import { IconGrid, IconList } from "@/components/icons/LouboutinIcons";
+import { useUi } from "@/lib/ui-context";
 import {
   CATEGORY_DESCRIPTIONS,
   CATEGORY_LABELS,
@@ -67,6 +68,7 @@ export function CollectionPage({
     : "Discover the full collection of tailoring, shoes, bags, perfumes, and accessories.";
 
   const backHref = "/collections/all/products";
+  const { promoVisible } = useUi();
 
   return (
     <main id="main-content" className="bg-cl-white pb-20">
@@ -123,7 +125,9 @@ export function CollectionPage({
         </nav>
       )}
 
-      <div className="sticky top-header-total z-30 border-y border-cl-gray-mid bg-cl-white">
+      <div
+        className={`sticky z-30 border-y border-cl-gray-mid bg-cl-white ${promoVisible ? "top-header-total" : "top-header-main"}`}
+      >
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4">
           <FilterDrawer filters={filters} onChange={setFilters} />
           <div className="flex items-center gap-4 text-[12px] text-cl-muted">

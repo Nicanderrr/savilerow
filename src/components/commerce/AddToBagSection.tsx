@@ -59,6 +59,7 @@ export function AddToBagSection({
   });
 
   const canAdd = Boolean(variant?.inStock && (!needsSize || size));
+  const { promoVisible } = useUi();
 
   const handleAdd = () => {
     if (!canAdd || !variant) return;
@@ -80,7 +81,9 @@ export function AddToBagSection({
   };
 
   return (
-    <div className="space-y-8 lg:sticky lg:top-header-total lg:self-start lg:py-8">
+    <div
+      className={`space-y-8 lg:sticky lg:self-start lg:py-8 ${promoVisible ? "lg:top-header-total" : "lg:top-header-main"}`}
+    >
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="font-serif text-2xl uppercase md:text-3xl">{product.name}</h1>

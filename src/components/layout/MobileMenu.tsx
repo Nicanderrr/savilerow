@@ -35,7 +35,7 @@ export function MobileMenu() {
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
         aria-label="Main navigation"
-        aria-hidden={!menuOpen}
+        //aria-hidden={!menuOpen}
       >
         <div className="flex items-center justify-between px-6 py-5">
           {activePanel ? (
@@ -92,8 +92,8 @@ export function MobileMenu() {
             <div>
               <p className="mb-4 text-label text-cl-muted">{activePanel}</p>
               <ul>
-                {activeItem?.children?.map((child) => (
-                  <li key={child.href}>
+               {activeItem?.children?.map((child, i) => (
+                  <li key={`${child.label}-${i}`}>
                     <Link
                       href={child.href}
                       className="block border-b border-cl-gray-mid/40 py-3.5 text-[14px] text-black hover:opacity-70"
