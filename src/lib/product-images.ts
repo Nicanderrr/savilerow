@@ -1,275 +1,110 @@
-import type { Product, ProductCategory } from "./types";
-import { colorGalleries, gallery } from "./images";
-
-/** Unsplash (free to use) — category-accurate product photography */
-const U = (id: string, w = 900) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`;
+import type { Product } from "./types";
+import { PHOTOS, gallery } from "./images";
 
 const SETS = {
   oxford: gallery(
-    U("photo-1614252239476-9c5ad177b00d"),
-    U("photo-1460353581641-37baddab0363"),
-    U("photo-1549298916-b41d501d3772"),
-    U("photo-1595950650236-5489d3b7f947"),
-    U("photo-1638247025967-d1e38b4c1f94"),
-    U("photo-1608256246200-53e635b5b65f")
+    PHOTOS.oxfordBlack1,
+    PHOTOS.oxfordBlack2,
+    PHOTOS.oxfordBlack3,
+    PHOTOS.oxfordBlack4,
+    PHOTOS.oxfordBurgundy1,
+    PHOTOS.oxfordBurgundy2
   ),
-  loafer: gallery(
-    U("photo-1533867612568-9a06e1c247b1"),
-    U("photo-1627225924765-0f060b44f4f4"),
-    U("photo-1614252239476-9c5ad177b00d"),
-    U("photo-1543163521-1bf539c55dd2"),
-    U("photo-1605810230434-7631ed960020"),
-    U("photo-1460353581641-37baddab0363")
-  ),
+  loafer: gallery(PHOTOS.loafer1, PHOTOS.loafer2, PHOTOS.loafer3, PHOTOS.loafer1, PHOTOS.loafer2, PHOTOS.loafer3),
   "chelsea-boot": gallery(
-    U("photo-1608256246200-53e635b5b65f"),
-    U("photo-1638247025967-d1e38b4c1f94"),
-    U("photo-1549298916-b41d501d3772"),
-    U("photo-1614252239476-9c5ad177b00d"),
-    U("photo-1595950650236-5489d3b7f947"),
-    U("photo-1460353581641-37baddab0363")
+    PHOTOS.chelseaBoot1,
+    PHOTOS.chelseaBoot2,
+    PHOTOS.chelseaBoot3,
+    PHOTOS.chelseaBoot1,
+    PHOTOS.chelseaBoot2,
+    PHOTOS.chelseaBoot3
   ),
-  sneaker: gallery(
-    U("photo-1549298916-b41d501d3772"),
-    U("photo-1606107557195-0a29c8381e44"),
-    U("photo-1608231387042-66d1773070a9"),
-    U("photo-1595950650236-5489d3b7f947"),
-    U("photo-1605810230434-7631ed960020"),
-    U("photo-1543163521-1bf539c55dd2")
-  ),
-  sandal: gallery(
-    U("photo-1543163521-1bf539c55dd2"),
-    U("photo-1596700501127-2a6c796a3b6e"),
-    U("photo-1560769629-975ec94e6a86"),
-    U("photo-1549298916-b41d501d3772"),
-    U("photo-1460353581641-37baddab0363"),
-    U("photo-1595950650236-5489d3b7f947")
-  ),
-  pump: gallery(
-    U("photo-1543163521-1bf539c55dd2"),
-    U("photo-1596700501127-2a6c796a3b6e"),
-    U("photo-1560769629-975ec94e6a86"),
-    U("photo-1549298916-b41d501d3772"),
-    U("photo-1460353581641-37baddab0363"),
-    U("photo-1595950650236-5489d3b7f947")
-  ),
+  sneaker: gallery(PHOTOS.sneaker1, PHOTOS.sneaker2, PHOTOS.sneaker3, PHOTOS.sneaker1, PHOTOS.sneaker2, PHOTOS.sneaker3),
+  sandal: gallery(PHOTOS.sandal1, PHOTOS.sandal2, PHOTOS.sandal3, PHOTOS.sandal1, PHOTOS.sandal2, PHOTOS.sandal3),
+  pump: gallery(PHOTOS.pump1, PHOTOS.pump2, PHOTOS.pump1, PHOTOS.pump2, PHOTOS.pump1, PHOTOS.pump2),
   boot: gallery(
-    U("photo-1608256246200-53e635b5b65f"),
-    U("photo-1638247025967-d1e38b4c1f94"),
-    U("photo-1549298916-b41d501d3772"),
-    U("photo-1605810230434-7631ed960020"),
-    U("photo-1614252239476-9c5ad177b00d"),
-    U("photo-1595950650236-5489d3b7f947")
+    PHOTOS.chelseaBoot2,
+    PHOTOS.chelseaBoot1,
+    PHOTOS.chelseaBoot3,
+    PHOTOS.chelseaBoot2,
+    PHOTOS.chelseaBoot1,
+    PHOTOS.chelseaBoot3
   ),
-  shoes: gallery(
-    U("photo-1614252239476-9c5ad177b00d"),
-    U("photo-1533867612568-9a06e1c247b1"),
-    U("photo-1549298916-b41d501d3772"),
-    U("photo-1595950650236-5489d3b7f947"),
-    U("photo-1608256246200-53e635b5b65f"),
-    U("photo-1543163521-1bf539c55dd2")
-  ),
+  shoes: gallery(PHOTOS.oxfordBlack1, PHOTOS.loafer1, PHOTOS.chelseaBoot1, PHOTOS.sneaker1, PHOTOS.sandal1, PHOTOS.pump1),
   "two-piece": gallery(
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1593030761757-71fae48a0a3f"),
-    U("photo-1624222247344-550fb60583fd"),
-    U("photo-1594938298603-c8148c4dae35", 800)
+    PHOTOS.suitNavy1,
+    PHOTOS.suitNavy2,
+    PHOTOS.suitNavy3,
+    PHOTOS.suitNavy4,
+    PHOTOS.suitNavy5,
+    PHOTOS.suitNavy6
   ),
   "three-piece": gallery(
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1593030761757-71fae48a0a3f"),
-    U("photo-1624222247344-550fb60583fd"),
-    U("photo-1617131984098-23e4d1405a44", 800)
+    PHOTOS.suitNavy3,
+    PHOTOS.suitNavy1,
+    PHOTOS.suitNavy2,
+    PHOTOS.suitNavy4,
+    PHOTOS.suitNavy5,
+    PHOTOS.suitNavy6
   ),
-  tuxedo: gallery(
-    U("photo-1593030761757-71fae48a0a3f"),
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1624222247344-550fb60583fd"),
-    U("photo-1593030761757-71fae48a0a3f", 800)
-  ),
+  tuxedo: gallery(PHOTOS.tuxedo1, PHOTOS.tuxedo2, PHOTOS.tuxedo3, PHOTOS.tuxedo4, PHOTOS.tuxedo1, PHOTOS.tuxedo2),
   "morning-coat": gallery(
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1593030761757-71fae48a0a3f"),
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1624222247344-550fb60583fd"),
-    U("photo-1617131984098-23e4d1405a44", 800)
+    PHOTOS.morningCoat1,
+    PHOTOS.morningCoat2,
+    PHOTOS.morningCoat3,
+    PHOTOS.morningCoat4,
+    PHOTOS.morningCoat1,
+    PHOTOS.morningCoat2
   ),
-  blazer: gallery(
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1624222247344-550fb60583fd"),
-    U("photo-1593030761757-71fae48a0a3f"),
-    U("photo-1594938298603-c8148c4dae35", 800)
-  ),
-  suits: gallery(
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1593030761757-71fae48a0a3f"),
-    U("photo-1624222247344-550fb60583fd"),
-    U("photo-1594938298603-c8148c4dae35", 800)
-  ),
+  blazer: gallery(PHOTOS.blazerW1, PHOTOS.blazerW2, PHOTOS.blazerW3, PHOTOS.suitNavy1, PHOTOS.suitNavy2, PHOTOS.suitNavy3),
+  suits: gallery(PHOTOS.suitNavy1, PHOTOS.tuxedo1, PHOTOS.blazerW1, PHOTOS.morningCoat1, PHOTOS.suitNavy2, PHOTOS.tuxedo2),
   weekender: gallery(
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1594223274512-ad4803739b7c"),
-    U("photo-1548036328-9e88e0a5d389", 800),
-    U("photo-1590874103328-eac142c7e1fe", 800)
+    PHOTOS.bagWeekender1,
+    PHOTOS.bagWeekender2,
+    PHOTOS.bagWeekender3,
+    PHOTOS.bagWeekender1,
+    PHOTOS.bagWeekender2,
+    PHOTOS.bagWeekender3
   ),
-  clutch: gallery(
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1594223274512-ad4803739b7c"),
-    U("photo-1584917865442-de89d76b69a1", 800),
-    U("photo-1590874103328-eac142c7e1fe", 800)
-  ),
+  clutch: gallery(PHOTOS.clutch1, PHOTOS.clutch2, PHOTOS.clutch3, PHOTOS.clutch1, PHOTOS.clutch2, PHOTOS.clutch3),
   tote: gallery(
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1594223274512-ad4803739b7c"),
-    U("photo-1590874103328-eac142c7e1fe", 800),
-    U("photo-1548036328-9e88e0a5d389", 800)
+    PHOTOS.bagWeekender2,
+    PHOTOS.bagWeekender1,
+    PHOTOS.bagWeekender3,
+    PHOTOS.bagWeekender2,
+    PHOTOS.bagWeekender1,
+    PHOTOS.bagWeekender3
   ),
   briefcase: gallery(
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1594223274512-ad4803739b7c"),
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1548036328-9e88e0a5d389", 800),
-    U("photo-1594223274512-ad4803739b7c", 800)
+    PHOTOS.bagWeekender3,
+    PHOTOS.bagWeekender1,
+    PHOTOS.bagWeekender2,
+    PHOTOS.bagWeekender3,
+    PHOTOS.bagWeekender1,
+    PHOTOS.bagWeekender2
   ),
-  crossbody: gallery(
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1594223274512-ad4803739b7c"),
-    U("photo-1584917865442-de89d76b69a1", 800),
-    U("photo-1590874103328-eac142c7e1fe", 800)
-  ),
+  crossbody: gallery(PHOTOS.clutch1, PHOTOS.bagWeekender2, PHOTOS.clutch2, PHOTOS.bagWeekender1, PHOTOS.clutch3, PHOTOS.bagWeekender3),
   backpack: gallery(
-    U("photo-1594223274512-ad4803739b7c"),
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1594223274512-ad4803739b7c", 800),
-    U("photo-1548036328-9e88e0a5d389", 800)
+    PHOTOS.bagWeekender3,
+    PHOTOS.bagWeekender2,
+    PHOTOS.bagWeekender1,
+    PHOTOS.bagWeekender3,
+    PHOTOS.bagWeekender2,
+    PHOTOS.bagWeekender1
   ),
-  bags: gallery(
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1594223274512-ad4803739b7c"),
-    U("photo-1548036328-9e88e0a5d389", 800),
-    U("photo-1590874103328-eac142c7e1fe", 800)
-  ),
-  "eau-de-parfum": gallery(
-    U("photo-1541643600914-78b084683601"),
-    U("photo-1592945403244-b3fbafd7f539"),
-    U("photo-1587017539504-54566cfbc10b"),
-    U("photo-1594035910381-fea79402674e"),
-    U("photo-1541643600914-78b084683601", 800),
-    U("photo-1592945403244-b3fbafd7f539", 800)
-  ),
-  cologne: gallery(
-    U("photo-1592945403244-b3fbafd7f539"),
-    U("photo-1541643600914-78b084683601"),
-    U("photo-1587017539504-54566cfbc10b"),
-    U("photo-1594035910381-fea79402674e"),
-    U("photo-1592945403244-b3fbafd7f539", 800),
-    U("photo-1541643600914-78b084683601", 800)
-  ),
-  "eau-de-toilette": gallery(
-    U("photo-1587017539504-54566cfbc10b"),
-    U("photo-1541643600914-78b084683601"),
-    U("photo-1592945403244-b3fbafd7f539"),
-    U("photo-1594035910381-fea79402674e"),
-    U("photo-1587017539504-54566cfbc10b", 800),
-    U("photo-1541643600914-78b084683601", 800)
-  ),
-  extrait: gallery(
-    U("photo-1594035910381-fea79402674e"),
-    U("photo-1541643600914-78b084683601"),
-    U("photo-1592945403244-b3fbafd7f539"),
-    U("photo-1587017539504-54566cfbc10b"),
-    U("photo-1594035910381-fea79402674e", 800),
-    U("photo-1541643600914-78b084683601", 800)
-  ),
-  perfumes: gallery(
-    U("photo-1541643600914-78b084683601"),
-    U("photo-1592945403244-b3fbafd7f539"),
-    U("photo-1587017539504-54566cfbc10b"),
-    U("photo-1594035910381-fea79402674e"),
-    U("photo-1541643600914-78b084683601", 800),
-    U("photo-1592945403244-b3fbafd7f539", 800)
-  ),
-  cufflinks: gallery(
-    U("photo-1617032213174-1e571b2e826b"),
-    U("photo-1606760227091-3dd870ed254f"),
-    U("photo-1617032213174-1e571b2e826b", 800),
-    U("photo-1606760227091-3dd870ed254f", 800),
-    U("photo-1617032213174-1e571b2e826b", 700),
-    U("photo-1606760227091-3dd870ed254f", 700)
-  ),
-  belts: gallery(
-    U("photo-1624222247344-550fb60583fd"),
-    U("photo-1617032213174-1e571b2e826b"),
-    U("photo-1606760227091-3dd870ed254f"),
-    U("photo-1624222247344-550fb60583fd", 800),
-    U("photo-1617032213174-1e571b2e826b", 800),
-    U("photo-1606760227091-3dd870ed254f", 800)
-  ),
-  wallets: gallery(
-    U("photo-1584917865442-de89d76b69a1"),
-    U("photo-1548036328-9e88e0a5d389"),
-    U("photo-1590874103328-eac142c7e1fe"),
-    U("photo-1584917865442-de89d76b69a1", 800),
-    U("photo-1548036328-9e88e0a5d389", 800),
-    U("photo-1590874103328-eac142c7e1fe", 800)
-  ),
-  "pocket-square": gallery(
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1617131984098-23e4d1405a44", 800),
-    U("photo-1594938298603-c8148c4dae35", 800),
-    U("photo-1507003211169-0a1dd7228f2d", 800)
-  ),
-  scarf: gallery(
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1594938298603-c8148c4dae35", 800),
-    U("photo-1617131984098-23e4d1405a44", 800),
-    U("photo-1507003211169-0a1dd7228f2d", 800)
-  ),
-  tie: gallery(
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1507003211169-0a1dd7228f2d"),
-    U("photo-1617131984098-23e4d1405a44", 800),
-    U("photo-1594938298603-c8148c4dae35", 800),
-    U("photo-1507003211169-0a1dd7228f2d", 800)
-  ),
-  accessories: gallery(
-    U("photo-1617032213174-1e571b2e826b"),
-    U("photo-1606760227091-3dd870ed254f"),
-    U("photo-1617131984098-23e4d1405a44"),
-    U("photo-1594938298603-c8148c4dae35"),
-    U("photo-1617032213174-1e571b2e826b", 800),
-    U("photo-1606760227091-3dd870ed254f", 800)
-  ),
+  bags: gallery(PHOTOS.bagWeekender1, PHOTOS.clutch1, PHOTOS.bagWeekender2, PHOTOS.clutch2, PHOTOS.bagWeekender3, PHOTOS.clutch3),
+  "eau-de-parfum": gallery(PHOTOS.perfume1, PHOTOS.perfume2, PHOTOS.perfume3, PHOTOS.perfume1, PHOTOS.perfume2, PHOTOS.perfume3),
+  cologne: gallery(PHOTOS.cologne1, PHOTOS.cologne2, PHOTOS.perfume1, PHOTOS.cologne1, PHOTOS.cologne2, PHOTOS.perfume2),
+  "eau-de-toilette": gallery(PHOTOS.perfume2, PHOTOS.perfume1, PHOTOS.cologne1, PHOTOS.perfume3, PHOTOS.perfume2, PHOTOS.cologne2),
+  extrait: gallery(PHOTOS.perfume3, PHOTOS.perfume1, PHOTOS.perfume2, PHOTOS.cologne1, PHOTOS.perfume3, PHOTOS.cologne2),
+  perfumes: gallery(PHOTOS.perfume1, PHOTOS.cologne1, PHOTOS.perfume2, PHOTOS.cologne2, PHOTOS.perfume3, PHOTOS.perfume1),
+  cufflinks: gallery(PHOTOS.cufflinks1, PHOTOS.cufflinks2, PHOTOS.cufflinks3, PHOTOS.cufflinks1, PHOTOS.cufflinks2, PHOTOS.cufflinks3),
+  belts: gallery(PHOTOS.belt1, PHOTOS.belt2, PHOTOS.belt3, PHOTOS.belt1, PHOTOS.belt2, PHOTOS.belt3),
+  wallets: gallery(PHOTOS.wallet1, PHOTOS.wallet2, PHOTOS.wallet3, PHOTOS.wallet1, PHOTOS.wallet2, PHOTOS.wallet3),
+  "pocket-square": gallery(PHOTOS.cufflinks3, PHOTOS.cufflinks1, PHOTOS.cufflinks2, PHOTOS.cufflinks3, PHOTOS.cufflinks1, PHOTOS.cufflinks2),
+  scarf: gallery(PHOTOS.cufflinks2, PHOTOS.cufflinks3, PHOTOS.cufflinks1, PHOTOS.cufflinks2, PHOTOS.cufflinks3, PHOTOS.cufflinks1),
+  tie: gallery(PHOTOS.cufflinks1, PHOTOS.cufflinks2, PHOTOS.cufflinks3, PHOTOS.cufflinks1, PHOTOS.cufflinks2, PHOTOS.cufflinks3),
+  accessories: gallery(PHOTOS.cufflinks1, PHOTOS.belt1, PHOTOS.wallet1, PHOTOS.cufflinks2, PHOTOS.belt2, PHOTOS.wallet2),
 } as const;
 
 type ImageSetKey = keyof typeof SETS;
@@ -277,25 +112,28 @@ type ImageSetKey = keyof typeof SETS;
 function resolveImageSet(product: Product): string[] {
   const sub = product.subcategory as ImageSetKey | undefined;
   if (sub && sub in SETS) return [...SETS[sub]];
+
   const cat = product.category as ImageSetKey;
   if (cat in SETS) return [...SETS[cat]];
+
   return [...SETS.suits];
 }
 
 function buildColorImages(product: Product, base: string[]): Record<string, string[]> {
   const out: Record<string, string[]> = {};
+
   for (const c of product.colors) {
-    if (c.value === "black" || c.value === "burgundy" || c.value === "navy") {
-      out[c.value] = gallery(...base);
-    } else if (c.value === "cream" || c.value === "gold") {
+    if (c.value === "cream" || c.value === "gold") {
       out[c.value] = gallery(base[1] ?? base[0], base[0], ...base.slice(2));
     } else {
       out[c.value] = gallery(...base);
     }
   }
+
   if (Object.keys(out).length === 0) {
     out.default = base;
   }
+
   return out;
 }
 

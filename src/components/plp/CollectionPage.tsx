@@ -32,9 +32,7 @@ export function CollectionPage({
     inStock: false,
   });
   const isAllProducts = !resolvedGender && !resolvedCategory;
-  const [view, setView] = useState<ViewMode>(
-    isAllProducts ? "grid" : resolvedCategory === "shoes" ? "list" : "grid"
-  );
+  const [view, setView] = useState<ViewMode>("grid");
   const [activeSub, setActiveSub] = useState<string>("all");
 
   const subcategories = useMemo(
@@ -161,9 +159,9 @@ export function CollectionPage({
           <div
             className={
               isAllProducts
-                ? "grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6"
+                ? "grid grid-cols-2 gap-x-4 gap-y-10 lg:gap-x-6"
                 : view === "grid"
-                  ? "grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-6"
+                  ? "grid grid-cols-2 gap-x-4 gap-y-12 lg:gap-x-6"
                   : "grid grid-cols-1 gap-8 md:flex md:flex-col"
             }
           >
