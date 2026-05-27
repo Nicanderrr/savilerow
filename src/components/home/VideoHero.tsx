@@ -40,7 +40,7 @@ export function VideoHero() {
         disablePictureInPicture
         controls={false}
       >
-        <source src="/video/hero.mp4" type="video/mp4" />
+        <source src="/video/hero1.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/15" aria-hidden />
       <div
