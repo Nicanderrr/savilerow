@@ -189,7 +189,17 @@ document.addEventListener('DOMContentLoaded', () => {
       shell.classList.toggle('admin-collapsed');
       localStorage.setItem('admin.sidebar.collapsed', shell.classList.contains('admin-collapsed'));
     }));
-    document.querySelectorAll('[data-mobile-sidebar]').forEach((button) => button.addEventListener('click', () => document.querySelector('.admin-sidebar')?.classList.toggle('mobile-open')));
+    const adminSidebar = document.querySelector('.admin-sidebar');
+    const adminSidebarOverlay = document.querySelector('[data-admin-sidebar-overlay]');
+    const setAdminSidebarOpen = (open) => {
+      adminSidebar?.classList.toggle('mobile-open', open);
+      adminSidebarOverlay?.classList.toggle('is-open', open);
+    };
+    document.querySelectorAll('[data-mobile-sidebar]').forEach((button) => button.addEventListener('click', () => {
+      setAdminSidebarOpen(!adminSidebar?.classList.contains('mobile-open'));
+    }));
+    adminSidebarOverlay?.addEventListener('click', () => setAdminSidebarOpen(false));
+    adminSidebar?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setAdminSidebarOpen(false)));
     document.querySelectorAll('[data-theme-toggle]').forEach((button) => button.addEventListener('click', () => {
       shell.classList.toggle('dark');
       localStorage.setItem('admin.theme', shell.classList.contains('dark') ? 'dark' : 'light');
@@ -215,6 +225,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const search = document.querySelector('[data-admin-search]');
         search?.closest('[data-admin-search-form]')?.classList.add('is-open');
         search?.focus();
+      }
+      if (event.key === 'Escape') {
+        setAdminSidebarOpen(false);
       }
     });
   }

@@ -12,14 +12,21 @@
 @endphp
 
 <header class="admin-topbar">
-    <div class="flex flex-col gap-4 px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
-        <div class="min-w-0 flex-1">
+    <div class="flex flex-col gap-3 px-3 py-3 sm:px-4 lg:flex-row lg:items-center lg:justify-between lg:px-6 lg:py-5">
+        <div class="flex min-w-0 flex-1 items-start gap-3">
+            <button type="button" class="admin-icon-button admin-mobile-menu-button" data-mobile-sidebar aria-label="Open admin menu" title="Menu">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="min-w-0 flex-1">
             <p class="admin-kicker">Premium Commerce Operations</p>
-            <h1 class="mt-2 truncate text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">@yield('page-title', 'Dashboard')</h1>
-            <p class="mt-2 truncate text-sm text-slate-500 dark:text-slate-400">@yield('page-description', 'Manage catalog, clients, orders, promotions, and reporting from one control center.')</p>
+                <h1 class="admin-page-title mt-1 truncate font-semibold tracking-tight text-slate-950 dark:text-white">@yield('page-title', 'Dashboard')</h1>
+                <p class="admin-page-description mt-1 truncate text-sm text-slate-500 dark:text-slate-400">@yield('page-description', 'Manage catalog, clients, orders, promotions, and reporting from one control center.')</p>
+            </div>
         </div>
 
-        <div class="flex min-w-0 flex-wrap items-center gap-3 text-sm lg:flex-nowrap">
+        <div class="admin-navbar-actions flex min-w-0 items-center gap-2 text-sm sm:gap-3">
             <form action="{{ route('admin.products.index') }}" class="admin-navbar-search" data-admin-search-form>
                 <button class="admin-icon-button" type="button" data-admin-search-toggle aria-label="Open search" title="Search">
                     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -87,7 +94,7 @@
             </details>
             <span class="admin-user-chip">
                 <span class="admin-user-chip-fallback">{{ $viewerInitials ?: 'A' }}</span>
-                <span>{{ $viewer->name ?? 'Admin' }}</span>
+                <span class="admin-user-chip-name">{{ $viewer->name ?? 'Admin' }}</span>
             </span>
         </div>
     </div>

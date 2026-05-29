@@ -10,6 +10,7 @@
 <body class="admin-shell" data-admin-shell>
 <div class="admin-layout">
     @include('admin.partials.sidebar')
+    <button type="button" class="admin-sidebar-overlay" data-admin-sidebar-overlay aria-label="Close admin menu"></button>
     <div class="admin-content">
         @include('admin.partials.navbar')
         <main class="admin-main">

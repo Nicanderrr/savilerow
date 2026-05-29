@@ -86,6 +86,11 @@
 
 <aside class="admin-sidebar">
     <div class="admin-brand-card">
+        <button type="button" class="admin-sidebar-mobile-close" data-mobile-sidebar aria-label="Close admin menu">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+        </button>
         <a href="{{ route('admin.dashboard') }}" class="admin-brand-logo-shell">
             <span class="admin-brand-logo">SR</span>
             <span class="admin-brand-copy sidebar-label">
