@@ -28,6 +28,7 @@
             </div>
 
             <nav class="mt-7 grid gap-2" aria-label="Store navigation">
+                <a href="/" class="store-menu-link-classic"><span>Home</span>@include('partials.icon', ['name' => 'arrow-right', 'class' => 'h-4 w-4'])</a>
                 <a href="/collections/all/products" class="store-menu-link-classic"><span>All products</span>@include('partials.icon', ['name' => 'arrow-right', 'class' => 'h-4 w-4'])</a>
                 @foreach(array_slice($menuSidebar['facets'] ?? [], 0, 8) as $facet)
                     <a href="{{ $facet['href'] }}" class="store-menu-link-classic"><span>{{ $facet['label'] }}</span><small>{{ $facet['count'] ?? 0 }}</small></a>
@@ -73,6 +74,18 @@
                         </a>
                     @endforeach
                 </nav>
+            </div>
+
+            <div class="mt-6 grid gap-2">
+                <p class="text-label text-cl-muted">Navigation</p>
+                <a href="/" class="store-menu-link">
+                    <span class="font-serif text-lg uppercase">Home</span>
+                    @include('partials.icon', ['name' => 'arrow-right', 'class' => 'h-4 w-4'])
+                </a>
+                <a href="/collections/all/products" class="store-menu-link">
+                    <span class="font-serif text-lg uppercase">All products</span>
+                    @include('partials.icon', ['name' => 'arrow-right', 'class' => 'h-4 w-4'])
+                </a>
             </div>
 
             <div class="mt-6 grid gap-2">

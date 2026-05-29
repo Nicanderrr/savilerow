@@ -5,7 +5,7 @@
             <p class="mt-3 max-w-sm text-[12px] leading-relaxed text-white/65">Bespoke tailoring and luxury ready-to-wear since 1849. Mayfair, London.</p>
         </div>
         <nav class="grid gap-8 border-b border-white/15 py-8 md:grid-cols-4" aria-label="Footer">
-            @foreach(['Help'=>['Contact us'=>'/policies/faq','Returns & exchanges'=>'/policies/returns','Visit our boutique'=>'/boutique','FAQ'=>'/policies/faq'], 'Services'=>['Book an appointment'=>'/appointments','Bespoke configurator'=>'/bespoke','Product care'=>'/policies/shipping'], 'About'=>['Work with us'=>'/policies/faq'], 'Legal'=>['Terms of sale'=>'/policies/shipping','Privacy policy'=>'/policies/faq','Sitemap'=>'/collections/all/products']] as $title => $links)
+            @foreach(['Shop'=>['Home'=>'/','All products'=>'/collections/all/products'], 'Help'=>['Contact us'=>'/policies/faq','Returns & exchanges'=>'/policies/returns','Visit our boutique'=>'/boutique','FAQ'=>'/policies/faq'], 'Services'=>['Book an appointment'=>'/appointments','Bespoke configurator'=>'/bespoke','Product care'=>'/policies/shipping'], 'Legal'=>['Terms of sale'=>'/policies/shipping','Privacy policy'=>'/policies/faq','Sitemap'=>'/collections/all/products']] as $title => $links)
                 <div>
                     <p class="text-label text-white">{{ $title }}</p>
                     <ul class="mt-4 space-y-2">
