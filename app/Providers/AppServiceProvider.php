@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
             return Limit::perMinute(3)->by($request->ip());
         });
 
-        View::composer(['partials.header', 'partials.chrome'], function ($view) {
+        View::composer(['partials.header', 'partials.chrome', 'partials.normal.header', 'partials.normal.chrome'], function ($view) {
             $menu = Schema::hasTable('settings')
                 ? Setting::where('group', 'themes')->where('key', 'menu_sidebar')->first()?->value ?? []
                 : [];

@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{AdminNotification, Customer, Order, Payment};
+use App\Models\{AdminNotification, Customer, Order, Payment, Setting};
 use App\Services\Analytics\GeoResolver;
 use App\Services\Payments\PaystackService;
 use App\Support\Catalog;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View as ViewFactory;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 use RuntimeException;
@@ -78,7 +80,7 @@ class CheckoutController extends Controller
         $payment = Payment::where('reference', $reference)->with('order')->first();
 
         if (! $reference || ! $payment) {
-            return view('storefront.payment-status', [
+            return view($this->themeView('payment-status'), [
                 'status' => 'failed',
                 'title' => 'Payment not found',
                 'message' => 'We could not find the payment reference returned by Paystack.',
@@ -112,14 +114,14 @@ class CheckoutController extends Controller
                 ]);
             }
 
-            return view('storefront.payment-status', [
+            return view($this->themeView('payment-status'), [
                 'status' => $paid ? 'success' : 'failed',
                 'title' => $paid ? 'Payment received' : 'Payment not completed',
                 'message' => $paid ? 'Your order has been received and is being reviewed by client services.' : 'Paystack did not mark this transaction as successful.',
                 'order' => $payment->order,
             ]);
         } catch (RuntimeException $exception) {
-            return view('storefront.payment-status', [
+            return view($this->themeView('payment-status'), [
                 'status' => 'failed',
                 'title' => 'Verification failed',
                 'message' => $exception->getMessage(),
@@ -204,5 +206,18 @@ class CheckoutController extends Controller
         ]);
 
         return [$order, $payment];
+    }
+
+    private function themeView(string $view): string
+    {
+        $theme = 'modern';
+
+        if (Schema::hasTable('settings')) {
+            $theme = Setting::where('group', 'themes')->where('key', 'storefront_design')->first()?->value['design'] ?? 'modern';
+        }
+
+        $candidate = in_array($theme, ['modern', 'normal'], true) ? "storefront.{$theme}.{$view}" : "storefront.{$view}";
+
+        return ViewFactory::exists($candidate) ? $candidate : "storefront.{$view}";
     }
 }

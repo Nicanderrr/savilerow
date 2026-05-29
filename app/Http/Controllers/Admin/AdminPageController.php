@@ -171,6 +171,7 @@ class AdminPageController extends Controller
             'hero_media_type' => ['required', 'in:image,video'],
             'hero_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,avif', 'max:8192'],
             'hero_video' => ['nullable', 'file', 'mimes:mp4,webm,mov', 'max:51200'],
+            'storefront_design' => ['required', 'in:modern,normal'],
             'sidebar_eyebrow' => ['nullable', 'string', 'max:120'],
             'sidebar_title' => ['required', 'string', 'max:120'],
             'sidebar_description' => ['nullable', 'string', 'max:220'],
@@ -219,6 +220,11 @@ class AdminPageController extends Controller
                 'media_type' => $validated['hero_media_type'],
             ]),
         ]);
+
+        Setting::updateOrCreate(
+            ['group' => 'themes', 'key' => 'storefront_design'],
+            ['value' => ['design' => $validated['storefront_design']]]
+        );
 
         $sidebar = Setting::firstOrCreate(
             ['group' => 'themes', 'key' => 'menu_sidebar'],

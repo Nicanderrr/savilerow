@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\{Category, Setting};
 use App\Support\Catalog;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View as ViewFactory;
 use Illuminate\View\View;
 
 class StorefrontController extends Controller
@@ -15,7 +16,7 @@ class StorefrontController extends Controller
             ? Setting::where('group', 'themes')->where('key', 'home_hero')->first()?->value ?? []
             : [];
 
-        return view('storefront.home', [
+        return view($this->themeView('home'), [
             'featured' => Catalog::featured(),
             'hero' => array_merge([
                 'eyebrow' => 'New collection',
@@ -35,7 +36,7 @@ class StorefrontController extends Controller
     {
         $products = $this->filterProducts(Catalog::all());
 
-        return view('storefront.collection', [
+        return view($this->themeView('collection'), [
             'title' => 'All products',
             'eyebrow' => 'Savile Row catalog',
             'products' => $products,
@@ -53,7 +54,7 @@ class StorefrontController extends Controller
 
         $products = $this->filterProducts($collection);
 
-        return view('storefront.collection', [
+        return view($this->themeView('collection'), [
             'title' => ucfirst($gender).' '.str_replace('-', ' ', $category),
             'eyebrow' => 'Collection',
             'products' => $products,
@@ -69,7 +70,7 @@ class StorefrontController extends Controller
 
         abort_if($product === null, 404);
 
-        return view('storefront.product', [
+        return view($this->themeView('product'), [
             'product' => $product,
             'related' => Catalog::related($product),
         ]);
@@ -77,12 +78,27 @@ class StorefrontController extends Controller
 
     public function simple(string $view): View
     {
-        return view('storefront.'.$view);
+        return view($this->themeView($view));
     }
 
     public function policy(string $view): View
     {
-        return view('policies.'.$view);
+        return view($this->themedPolicyView($view));
+    }
+
+    public function cart(): View
+    {
+        return view($this->themeView('cart'));
+    }
+
+    public function checkout(): View
+    {
+        return view($this->themeView('checkout'));
+    }
+
+    public function paymentStatus(array $data): View
+    {
+        return view($this->themeView('payment-status'), $data);
     }
 
     private function filterProducts(array $products): array
@@ -111,6 +127,33 @@ class StorefrontController extends Controller
         return array_merge([
             ['label' => 'All products', 'href' => route('collections.all'), 'key' => 'all-products'],
         ], Catalog::facets());
+    }
+
+    private function theme(): string
+    {
+        if (! Schema::hasTable('settings')) {
+            return 'modern';
+        }
+
+        $theme = Setting::where('group', 'themes')->where('key', 'storefront_design')->first()?->value['design'] ?? 'modern';
+
+        return in_array($theme, ['modern', 'normal'], true) ? $theme : 'modern';
+    }
+
+    private function themeView(string $view): string
+    {
+        $theme = $this->theme();
+        $candidate = "storefront.{$theme}.{$view}";
+
+        return ViewFactory::exists($candidate) ? $candidate : "storefront.{$view}";
+    }
+
+    private function themedPolicyView(string $view): string
+    {
+        $theme = $this->theme();
+        $candidate = "policies.{$theme}.{$view}";
+
+        return ViewFactory::exists($candidate) ? $candidate : "policies.{$view}";
     }
 }
 

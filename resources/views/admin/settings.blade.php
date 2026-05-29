@@ -13,6 +13,7 @@
         'image' => '/images/products/hero-poster.jpg',
         'video' => '/video/hero1.mp4',
     ], $settings->get('home_hero')?->value ?? []);
+    $storefrontDesign = $settings->get('storefront_design')?->value['design'] ?? 'modern';
     $sidebar = array_merge([
         'eyebrow' => 'Mayfair house',
         'title' => 'Savile Row',
@@ -34,6 +35,42 @@
         @csrf
 
         <div class="space-y-6">
+        <section class="admin-card p-5">
+            <p class="admin-kicker">System Theme</p>
+            <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Storefront design system</h2>
+            <p class="mt-2 text-sm text-slate-500">Switch the complete customer-facing storefront between the current modern luxury design and the original clean normal design. Admin pages are not affected.</p>
+            <div class="mt-6 grid gap-3 md:grid-cols-2">
+                <label class="cursor-pointer rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-slate-400 has-[:checked]:border-slate-950 has-[:checked]:ring-2 has-[:checked]:ring-slate-950/10">
+                    <input type="radio" name="storefront_design" value="modern" class="form-check-input" @checked(old('storefront_design', $storefrontDesign) === 'modern')>
+                    <span class="ml-2 text-sm font-semibold text-slate-900">Modern design</span>
+                    <span class="mt-3 block overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 p-3">
+                        <span class="block h-24 rounded-xl bg-[radial-gradient(circle_at_top_left,#ce0e2d33,transparent_40%),linear-gradient(135deg,#050505,#2d2319)]"></span>
+                        <span class="mt-3 grid grid-cols-3 gap-2">
+                            <span class="block h-10 rounded-lg bg-slate-700"></span>
+                            <span class="block h-10 rounded-lg bg-slate-700"></span>
+                            <span class="block h-10 rounded-lg bg-slate-700"></span>
+                        </span>
+                    </span>
+                    <span class="mt-3 block text-xs leading-5 text-slate-500">Current editorial, card-rich, premium dashboard-era storefront.</span>
+                </label>
+                <label class="cursor-pointer rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-slate-400 has-[:checked]:border-slate-950 has-[:checked]:ring-2 has-[:checked]:ring-slate-950/10">
+                    <input type="radio" name="storefront_design" value="normal" class="form-check-input" @checked(old('storefront_design', $storefrontDesign) === 'normal')>
+                    <span class="ml-2 text-sm font-semibold text-slate-900">Normal design</span>
+                    <span class="mt-3 block rounded-2xl border border-slate-200 bg-white p-3">
+                        <span class="block h-24 border border-slate-200 bg-[#f5f5f5]"></span>
+                        <span class="mt-3 grid grid-cols-4 gap-2">
+                            <span class="block h-12 border border-slate-200 bg-[#f5f5f5]"></span>
+                            <span class="block h-12 border border-slate-200 bg-[#f5f5f5]"></span>
+                            <span class="block h-12 border border-slate-200 bg-[#f5f5f5]"></span>
+                            <span class="block h-12 border border-slate-200 bg-[#f5f5f5]"></span>
+                        </span>
+                    </span>
+                    <span class="mt-3 block text-xs leading-5 text-slate-500">Original SavileRow1 clean storefront style: simple header, white surfaces, minimal cards.</span>
+                </label>
+            </div>
+            @error('storefront_design')<p class="mt-2 text-sm font-semibold text-red-600">{{ $message }}</p>@enderror
+        </section>
+
         <section class="admin-card p-5">
             <p class="admin-kicker">Theme Editor</p>
             <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Homepage hero</h2>
