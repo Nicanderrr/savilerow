@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-if [ -n "$RENDER_EXTERNAL_URL" ] && [ -z "$APP_URL" ]; then
+if [ -n "$RENDER_EXTERNAL_URL" ]; then
   export APP_URL="$RENDER_EXTERNAL_URL"
+fi
+
+if [ -n "$RENDER_EXTERNAL_HOSTNAME" ]; then
+  export APP_URL="https://$RENDER_EXTERNAL_HOSTNAME"
 fi
 
 # Render-safe defaults for demo deployments.
