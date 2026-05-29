@@ -1,0 +1,2209 @@
+[
+  {
+    "id": "1",
+    "slug": "mayfair-two-piece",
+    "name": "Mayfair Two-Piece Suit",
+    "description": "Hand-finished two-piece in Super 150s wool. Soft shoulder, natural lapel roll, half-canvas construction.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "two-piece",
+    "price": 4200,
+    "currency": "USD",
+    "images": [
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg",
+      "/images/products/suit-navy-4.jpg",
+      "/images/products/suit-navy-5.jpg",
+      "/images/products/suit-navy-6.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Super 150s wool, cupro lining, horn buttons",
+    "care": "Dry clean only. Store on a shaped hanger.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "bespoke",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": true
+  },
+  {
+    "id": "2",
+    "slug": "st-james-morning-coat",
+    "name": "St James Morning Coat",
+    "description": "Formal morning coat with silk-faced lapels for Royal Ascot and white-tie occasions.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "morning-coat",
+    "price": 5800,
+    "currency": "USD",
+    "images": [
+      "/images/products/morning-coat-1.jpg",
+      "/images/products/morning-coat-2.jpg",
+      "/images/products/morning-coat-3.jpg",
+      "/images/products/morning-coat-4.jpg",
+      "/images/products/suit-navy-5.jpg",
+      "/images/products/suit-navy-6.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Barathea wool, silk facings",
+    "care": "Dry clean only. Brush after wear.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "formal"
+    ],
+    "isNew": false,
+    "isBespokeEligible": true
+  },
+  {
+    "id": "3",
+    "slug": "chelsea-tuxedo",
+    "name": "Chelsea Peak-Lapel Tuxedo",
+    "description": "Single-button peak lapel dinner suit in barathea wool with satin facings.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "tuxedo",
+    "price": 3900,
+    "currency": "USD",
+    "images": [
+      "/images/products/tuxedo-1.jpg",
+      "/images/products/tuxedo-2.jpg",
+      "/images/products/tuxedo-3.jpg",
+      "/images/products/tuxedo-4.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Barathea wool, satin lapels",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": true
+  },
+  {
+    "id": "4",
+    "slug": "connaught-oxford",
+    "name": "Connaught Cap-Toe Oxford",
+    "description": "Hand-burnished calfskin oxford on leather sole. Goodyear welted in Northampton.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "oxford",
+    "price": 890,
+    "currency": "USD",
+    "images": [
+      "/images/products/oxford-black-1.jpg",
+      "/images/products/oxford-black-2.jpg",
+      "/images/products/oxford-black-3.jpg",
+      "/images/products/oxford-black-4.jpg",
+      "/images/products/oxford-burgundy-1.jpg",
+      "/images/products/oxford-burgundy-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Full-grain calfskin, leather sole",
+    "care": "Use shoe trees. Polish with neutral cream.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "5",
+    "slug": "belgravia-loafer",
+    "name": "Belgravia Penny Loafer",
+    "description": "Unlined penny loafer in full-grain leather with hand-stitched apron.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "loafer",
+    "price": 750,
+    "currency": "USD",
+    "images": [
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-3.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Full-grain leather, rubber inset heel",
+    "care": "Brush and condition monthly.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "6",
+    "slug": "albany-weekender",
+    "name": "Albany Weekender",
+    "description": "Bridle leather weekender with solid brass hardware and cotton twill lining.",
+    "gender": "men",
+    "category": "bags",
+    "subcategory": "weekender",
+    "price": 1850,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Bridle leather, brass hardware",
+    "care": "Condition leather seasonally.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "bags",
+      "bags"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "7",
+    "slug": "piccadilly-clutch",
+    "name": "Piccadilly Evening Clutch",
+    "description": "Satin evening clutch with detachable chain and silk interior.",
+    "gender": "women",
+    "category": "bags",
+    "subcategory": "clutch",
+    "price": 620,
+    "currency": "USD",
+    "images": [
+      "/images/products/clutch-1.jpg",
+      "/images/products/clutch-2.jpg",
+      "/images/products/clutch-3.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Satin exterior, silk lining",
+    "care": "Store in dust bag. Spot clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "bags",
+      "bags",
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "8",
+    "slug": "no-14-bespoke",
+    "name": "No. 14 Bespoke Eau de Parfum",
+    "description": "Oud, iris, and suede. 50ml extrait composed in Grasse.",
+    "gender": "women",
+    "category": "perfumes",
+    "subcategory": "eau-de-parfum",
+    "price": 320,
+    "currency": "USD",
+    "images": [
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/cologne-1.jpg",
+      "/images/products/cologne-2.jpg",
+      "/images/products/perfume-1.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "50 ml",
+      "100 ml"
+    ],
+    "material": "Extrait concentration, glass flacon",
+    "care": "Store away from direct sunlight.",
+    "shippingNote": "Ships via certified fragrance courier.",
+    "tags": [
+      "women",
+      "perfumes",
+      "fragrance"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "9",
+    "slug": "savile-cologne",
+    "name": "Savile Cologne",
+    "description": "Bergamot, vetiver, and white musk. Unisex cologne.",
+    "gender": "men",
+    "category": "perfumes",
+    "subcategory": "cologne",
+    "price": 185,
+    "currency": "USD",
+    "images": [
+      "/images/products/cologne-1.jpg",
+      "/images/products/cologne-2.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/cologne-1.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "100 ml"
+    ],
+    "material": "Eau de cologne, recyclable glass",
+    "care": "Keep cap secured between uses.",
+    "shippingNote": "Ships via certified fragrance courier.",
+    "tags": [
+      "perfumes",
+      "fragrance"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "10",
+    "slug": "gold-enamel-cufflinks",
+    "name": "Gold Enamel Cufflinks",
+    "description": "18k gold-plated cufflinks with navy enamel inlay.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "cufflinks",
+    "price": 420,
+    "currency": "USD",
+    "images": [
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/accessories-promo.jpg",
+      "/images/products/belt-1.jpg",
+      "/images/products/belt-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Gold-plated brass, enamel inlay",
+    "care": "Polish with a soft cloth. Avoid water.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "11",
+    "slug": "reversible-silk-belt",
+    "name": "Reversible Silk Belt",
+    "description": "Reversible silk and leather belt with brushed gold buckle.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "belts",
+    "price": 295,
+    "currency": "USD",
+    "images": [
+      "/images/products/belt-1.jpg",
+      "/images/products/belt-2.jpg",
+      "/images/products/belt-3.jpg",
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "${s} cm"
+    ],
+    "material": "Silk and leather, gold-plated buckle",
+    "care": "Rotate sides seasonally. Store flat.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "12",
+    "slug": "kensington-blazer-w",
+    "name": "Kensington Tailored Blazer",
+    "description": "Single-breasted blazer in Italian stretch wool with hand-finished buttonholes.",
+    "gender": "women",
+    "category": "suits",
+    "subcategory": "blazer",
+    "price": 2100,
+    "currency": "USD",
+    "images": [
+      "/images/products/blazer-w-1.jpg",
+      "/images/products/blazer-w-2.jpg",
+      "/images/products/blazer-w-3.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Italian stretch wool, silk lining",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "women",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": true
+  },
+  {
+    "id": "13",
+    "slug": "bond-st-pump",
+    "name": "Bond Street Satin Pump",
+    "description": "85mm satin pump with leather sole and cushioned insole.",
+    "gender": "women",
+    "category": "shoes",
+    "subcategory": "pump",
+    "price": 680,
+    "currency": "USD",
+    "images": [
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg",
+      "/images/products/oxford-black-1.jpg",
+      "/images/products/oxford-black-2.jpg",
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Satin upper, leather sole",
+    "care": "Protect soles before first wear.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "shoes",
+      "shoes",
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "14",
+    "slug": "junior-eton-blazer",
+    "name": "Junior Eton Blazer",
+    "description": "Half-lined wool blazer for young gentlemen. School and occasion ready.",
+    "gender": "kids",
+    "category": "suits",
+    "subcategory": "blazer",
+    "price": 480,
+    "currency": "USD",
+    "images": [
+      "/images/products/kids-blazer-1.jpg",
+      "/images/products/kids-blazer-2.jpg",
+      "/images/products/kids-promo.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "Age ${s}"
+    ],
+    "material": "Wool blend, half canvas",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "kids",
+      "kids"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "15",
+    "slug": "little-piccadilly-loafer",
+    "name": "Little Piccadilly Loafer",
+    "description": "Children's leather loafer with flexible rubber sole.",
+    "gender": "kids",
+    "category": "shoes",
+    "subcategory": "loafer",
+    "price": 195,
+    "currency": "USD",
+    "images": [
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-3.jpg",
+      "/images/products/oxford-black-1.jpg",
+      "/images/products/oxford-black-2.jpg",
+      "/images/products/oxford-burgundy-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "${s}"
+    ],
+    "material": "Leather upper, rubber sole",
+    "care": "Wipe clean with damp cloth.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "kids",
+      "shoes",
+      "kids",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "16",
+    "slug": "rose-velvet-bow",
+    "name": "Rose Velvet Bow Belt",
+    "description": "Velvet bow belt with antique gold clasp.",
+    "gender": "women",
+    "category": "accessories",
+    "subcategory": "belts",
+    "price": 245,
+    "currency": "USD",
+    "images": [
+      "/images/products/belt-2.jpg",
+      "/images/products/belt-3.jpg",
+      "/images/products/belt-1.jpg",
+      "/images/products/belt-2.jpg",
+      "/images/products/belt-3.jpg",
+      "/images/products/belt-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Velvet, antique gold clasp",
+    "care": "Store rolled, not folded.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "17",
+    "slug": "mayfair-card-wallet",
+    "name": "Mayfair Card Wallet",
+    "description": "Slim card wallet in grained calfskin with six slots and central pocket.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "wallets",
+    "price": 385,
+    "currency": "USD",
+    "images": [
+      "/images/products/wallet-1.jpg",
+      "/images/products/wallet-2.jpg",
+      "/images/products/wallet-3.jpg",
+      "/images/products/wallet-2.jpg",
+      "/images/products/wallet-3.jpg",
+      "/images/products/wallet-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Grained calfskin",
+    "care": "Condition twice yearly.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "18",
+    "slug": "kensington-continental-wallet",
+    "name": "Kensington Continental Wallet",
+    "description": "Zip-around continental wallet with gusseted coin pouch.",
+    "gender": "women",
+    "category": "accessories",
+    "subcategory": "wallets",
+    "price": 520,
+    "currency": "USD",
+    "images": [
+      "/images/products/wallet-3.jpg",
+      "/images/products/wallet-2.jpg",
+      "/images/products/wallet-1.jpg",
+      "/images/products/wallet-2.jpg",
+      "/images/products/wallet-3.jpg",
+      "/images/products/wallet-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Lambskin leather, gold hardware",
+    "care": "Store in dust bag.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "19",
+    "slug": "westminster-three-piece",
+    "name": "Westminster Three-Piece Suit",
+    "description": "Classic three-piece in worsted wool with notch lapel, working buttonholes, and matching waistcoat.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "three-piece",
+    "price": 4800,
+    "currency": "USD",
+    "images": [
+      "/images/products/suit-navy-3.jpg",
+      "/images/products/suit-navy-4.jpg",
+      "/images/products/suit-navy-5.jpg",
+      "/images/products/suit-navy-6.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Worsted wool, Bemberg lining",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": true
+  },
+  {
+    "id": "20",
+    "slug": "buckingham-dinner-suit",
+    "name": "Buckingham Shawl-Collar Dinner Suit",
+    "description": "Single-button shawl collar dinner suit in midnight wool with grosgrain facings.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "tuxedo",
+    "price": 4400,
+    "currency": "USD",
+    "images": [
+      "/images/products/tuxedo-2.jpg",
+      "/images/products/tuxedo-3.jpg",
+      "/images/products/tuxedo-4.jpg",
+      "/images/products/tuxedo-1.jpg",
+      "/images/products/morning-coat-1.jpg",
+      "/images/products/morning-coat-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Wool, grosgrain facings",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": true
+  },
+  {
+    "id": "21",
+    "slug": "regent-wool-blazer",
+    "name": "Regent Single-Breasted Blazer",
+    "description": "Lightweight unstructured blazer in hopsack wool with patch pockets.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "blazer",
+    "price": 2600,
+    "currency": "USD",
+    "images": [
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-4.jpg",
+      "/images/products/suit-navy-5.jpg",
+      "/images/products/suit-navy-6.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Hopsack wool, half canvas",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "22",
+    "slug": "belgrave-two-piece-w",
+    "name": "Belgrave Tailored Two-Piece",
+    "description": "Women's two-piece in fluid Italian wool with cinched waist and tapered trouser.",
+    "gender": "women",
+    "category": "suits",
+    "subcategory": "two-piece",
+    "price": 3200,
+    "currency": "USD",
+    "images": [
+      "/images/products/blazer-w-2.jpg",
+      "/images/products/blazer-w-3.jpg",
+      "/images/products/blazer-w-1.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Italian wool, silk lining",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "women",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": true
+  },
+  {
+    "id": "23",
+    "slug": "eton-junior-tuxedo",
+    "name": "Eton Junior Tuxedo",
+    "description": "Children's two-piece dinner suit with satin lapels for school galas and weddings.",
+    "gender": "kids",
+    "category": "suits",
+    "subcategory": "tuxedo",
+    "price": 620,
+    "currency": "USD",
+    "images": [
+      "/images/products/kids-blazer-2.jpg",
+      "/images/products/kids-blazer-1.jpg",
+      "/images/products/kids-promo.jpg",
+      "/images/products/tuxedo-1.jpg",
+      "/images/products/tuxedo-2.jpg",
+      "/images/products/tuxedo-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "Age ${s}"
+    ],
+    "material": "Wool blend, satin lapel facings",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "kids",
+      "kids",
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "24",
+    "slug": "knightsbridge-chelsea-boot",
+    "name": "Knightsbridge Chelsea Boot",
+    "description": "Calfskin Chelsea boot with elasticated side gussets and Goodyear-welted leather sole.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "chelsea-boot",
+    "price": 980,
+    "currency": "USD",
+    "images": [
+      "/images/products/oxford-black-2.jpg",
+      "/images/products/oxford-black-3.jpg",
+      "/images/products/oxford-black-4.jpg",
+      "/images/products/oxford-black-1.jpg",
+      "/images/products/oxford-black-3.jpg",
+      "/images/products/oxford-black-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Calfskin upper, leather sole",
+    "care": "Use shoe trees. Polish with neutral cream.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "25",
+    "slug": "mayfair-velvet-loafer",
+    "name": "Mayfair Velvet Slipper",
+    "description": "Hand-embroidered velvet evening slipper with leather sole and silk lining.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "loafer",
+    "price": 720,
+    "currency": "USD",
+    "images": [
+      "/images/products/loafer-3.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-3.jpg",
+      "/images/products/loafer-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Velvet upper, leather sole",
+    "care": "Brush nap regularly. Avoid moisture.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes",
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "26",
+    "slug": "battersea-court-sandal",
+    "name": "Battersea Strappy Sandal",
+    "description": "75mm strappy sandal with adjustable ankle buckle and leather sole.",
+    "gender": "women",
+    "category": "shoes",
+    "subcategory": "sandal",
+    "price": 640,
+    "currency": "USD",
+    "images": [
+      "/images/products/pump-2.jpg",
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg",
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg",
+      "/images/products/pump-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Calf leather, leather sole",
+    "care": "Wipe with damp cloth. Store in dust bag.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "shoes",
+      "shoes",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "27",
+    "slug": "soho-leather-sneaker",
+    "name": "Soho Low-Top Sneaker",
+    "description": "Italian-made low-top sneaker in supple calfskin with cushioned cup sole.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "sneaker",
+    "price": 590,
+    "currency": "USD",
+    "images": [
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-3.jpg",
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-3.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Calfskin, rubber cup sole",
+    "care": "Wipe clean. Use protector spray.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "28",
+    "slug": "brompton-riding-boot",
+    "name": "Brompton Tall Riding Boot",
+    "description": "Knee-high leather riding boot with side zip and stacked-leather heel.",
+    "gender": "women",
+    "category": "shoes",
+    "subcategory": "boot",
+    "price": 1180,
+    "currency": "USD",
+    "images": [
+      "/images/products/oxford-black-4.jpg",
+      "/images/products/oxford-black-3.jpg",
+      "/images/products/oxford-black-2.jpg",
+      "/images/products/oxford-black-1.jpg",
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [],
+    "material": "Full-grain leather, stacked heel",
+    "care": "Condition every six months.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "shoes",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "29",
+    "slug": "hampstead-tote",
+    "name": "Hampstead Structured Tote",
+    "description": "Structured day tote in grained leather with detachable pouch and brass feet.",
+    "gender": "women",
+    "category": "bags",
+    "subcategory": "tote",
+    "price": 1450,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/clutch-2.jpg",
+      "/images/products/clutch-3.jpg",
+      "/images/products/clutch-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Grained calf leather, brass hardware",
+    "care": "Condition leather seasonally.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "bags",
+      "bags",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "30",
+    "slug": "holland-park-briefcase",
+    "name": "Holland Park Briefcase",
+    "description": "Slim attaché briefcase in bridle leather with combination lock and pen loops.",
+    "gender": "men",
+    "category": "bags",
+    "subcategory": "briefcase",
+    "price": 2200,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Bridle leather, brass combination lock",
+    "care": "Wipe clean. Condition twice yearly.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "bags",
+      "bags"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "31",
+    "slug": "marylebone-crossbody",
+    "name": "Marylebone Crossbody",
+    "description": "Compact crossbody in lambskin with woven leather strap and magnetic closure.",
+    "gender": "women",
+    "category": "bags",
+    "subcategory": "crossbody",
+    "price": 980,
+    "currency": "USD",
+    "images": [
+      "/images/products/clutch-2.jpg",
+      "/images/products/clutch-1.jpg",
+      "/images/products/clutch-3.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Lambskin, gold hardware",
+    "care": "Store in dust bag. Avoid prolonged sunlight.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "bags",
+      "bags"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "32",
+    "slug": "soho-backpack",
+    "name": "Soho City Backpack",
+    "description": "Streamlined city backpack in coated canvas with leather trim and padded laptop sleeve.",
+    "gender": "men",
+    "category": "bags",
+    "subcategory": "backpack",
+    "price": 1320,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Coated canvas, leather trim",
+    "care": "Wipe clean. Use leather conditioner on trims.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "bags",
+      "bags"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "33",
+    "slug": "chelsea-mini-bag",
+    "name": "Chelsea Top-Handle Mini",
+    "description": "Petite top-handle bag with quilted leather body and short chain shoulder strap.",
+    "gender": "women",
+    "category": "bags",
+    "subcategory": "clutch",
+    "price": 1180,
+    "currency": "USD",
+    "images": [
+      "/images/products/clutch-3.jpg",
+      "/images/products/clutch-1.jpg",
+      "/images/products/clutch-2.jpg",
+      "/images/products/clutch-3.jpg",
+      "/images/products/clutch-1.jpg",
+      "/images/products/clutch-2.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Quilted lambskin, gold hardware",
+    "care": "Store in dust bag.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "bags",
+      "bags",
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "34",
+    "slug": "sloane-eau-de-toilette",
+    "name": "Sloane Eau de Toilette",
+    "description": "Citrus, neroli, and cedar. A bright daytime composition in 100ml.",
+    "gender": "men",
+    "category": "perfumes",
+    "subcategory": "eau-de-toilette",
+    "price": 165,
+    "currency": "USD",
+    "images": [
+      "/images/products/cologne-2.jpg",
+      "/images/products/cologne-1.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/cologne-2.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "100 ml"
+    ],
+    "material": "Eau de toilette, recyclable glass",
+    "care": "Store away from direct sunlight.",
+    "shippingNote": "Ships via certified fragrance courier.",
+    "tags": [
+      "perfumes",
+      "fragrance",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "35",
+    "slug": "knightsbridge-bouquet",
+    "name": "Knightsbridge Floral Bouquet",
+    "description": "Rose, peony, and amber. A romantic eau de parfum in 75ml.",
+    "gender": "women",
+    "category": "perfumes",
+    "subcategory": "eau-de-parfum",
+    "price": 245,
+    "currency": "USD",
+    "images": [
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/cologne-1.jpg",
+      "/images/products/cologne-2.jpg",
+      "/images/products/perfume-2.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "50 ml",
+      "75 ml"
+    ],
+    "material": "Eau de parfum, crystal flacon",
+    "care": "Keep capped between uses.",
+    "shippingNote": "Ships via certified fragrance courier.",
+    "tags": [
+      "women",
+      "perfumes",
+      "fragrance"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "36",
+    "slug": "belgravia-oud-extrait",
+    "name": "Belgravia Oud Extrait",
+    "description": "Saffron, oud, and leather. A deep evening extrait composed in Grasse.",
+    "gender": "women",
+    "category": "perfumes",
+    "subcategory": "extrait",
+    "price": 420,
+    "currency": "USD",
+    "images": [
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/cologne-2.jpg",
+      "/images/products/cologne-1.jpg",
+      "/images/products/perfume-3.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "50 ml"
+    ],
+    "material": "Extrait concentration, crystal flacon",
+    "care": "Store away from heat and light.",
+    "shippingNote": "Ships via certified fragrance courier.",
+    "tags": [
+      "women",
+      "perfumes",
+      "fragrance"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "37",
+    "slug": "mayfair-vetiver",
+    "name": "Mayfair Vetiver Eau de Parfum",
+    "description": "Vetiver, smoked tea, and tonka. A signature woody composition in 100ml.",
+    "gender": "men",
+    "category": "perfumes",
+    "subcategory": "eau-de-parfum",
+    "price": 220,
+    "currency": "USD",
+    "images": [
+      "/images/products/cologne-1.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/cologne-2.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/cologne-1.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "100 ml"
+    ],
+    "material": "Eau de parfum, glass flacon",
+    "care": "Keep capped between uses.",
+    "shippingNote": "Ships via certified fragrance courier.",
+    "tags": [
+      "perfumes",
+      "fragrance"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "38",
+    "slug": "royal-bergamot-cologne",
+    "name": "Royal Bergamot Cologne",
+    "description": "Calabrian bergamot, lavender, and white musk. A fresh classical cologne.",
+    "gender": "men",
+    "category": "perfumes",
+    "subcategory": "cologne",
+    "price": 145,
+    "currency": "USD",
+    "images": [
+      "/images/products/cologne-2.jpg",
+      "/images/products/cologne-1.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/cologne-2.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "100 ml"
+    ],
+    "material": "Eau de cologne, recyclable glass",
+    "care": "Store in cool, dry place.",
+    "shippingNote": "Ships via certified fragrance courier.",
+    "tags": [
+      "perfumes",
+      "fragrance"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "39",
+    "slug": "silk-pocket-square",
+    "name": "Hand-Rolled Silk Pocket Square",
+    "description": "Hand-rolled Italian silk pocket square in the House's signature print.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "pocket-square",
+    "price": 175,
+    "currency": "USD",
+    "images": [
+      "/images/products/belt-3.jpg",
+      "/images/products/belt-1.jpg",
+      "/images/products/belt-2.jpg",
+      "/images/products/accessories-promo.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Italian silk, hand-rolled hem",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "40",
+    "slug": "sapphire-cufflinks",
+    "name": "Sapphire Knot Cufflinks",
+    "description": "White gold knot cufflinks set with calibrated sapphire centres.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "cufflinks",
+    "price": 680,
+    "currency": "USD",
+    "images": [
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/accessories-promo.jpg",
+      "/images/products/belt-2.jpg",
+      "/images/products/belt-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "White gold, sapphire",
+    "care": "Polish with a soft cloth.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "41",
+    "slug": "cashmere-scarf",
+    "name": "Mongolian Cashmere Scarf",
+    "description": "Lightweight cashmere scarf with hand-knotted fringe.",
+    "gender": "women",
+    "category": "accessories",
+    "subcategory": "scarf",
+    "price": 420,
+    "currency": "USD",
+    "images": [
+      "/images/products/belt-2.jpg",
+      "/images/products/belt-1.jpg",
+      "/images/products/belt-3.jpg",
+      "/images/products/accessories-promo.jpg",
+      "/images/products/belt-2.jpg",
+      "/images/products/belt-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "100% Mongolian cashmere",
+    "care": "Dry clean recommended.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "accessories",
+      "accessories",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "42",
+    "slug": "grenadine-silk-tie",
+    "name": "Grenadine Silk Tie",
+    "description": "Hand-stitched grenadine silk tie with self-tipping and 9cm blade.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "tie",
+    "price": 195,
+    "currency": "USD",
+    "images": [
+      "/images/products/belt-1.jpg",
+      "/images/products/belt-3.jpg",
+      "/images/products/belt-2.jpg",
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Italian grenadine silk",
+    "care": "Roll loosely between wears.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "43",
+    "slug": "bridle-leather-belt",
+    "name": "Bridle Leather Dress Belt",
+    "description": "30mm dress belt in English bridle leather with brushed brass buckle.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "belts",
+    "price": 320,
+    "currency": "USD",
+    "images": [
+      "/images/products/belt-3.jpg",
+      "/images/products/belt-2.jpg",
+      "/images/products/belt-1.jpg",
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-1.jpg"
+    ],
+    "colors": [],
+    "sizes": [
+      "${s} cm"
+    ],
+    "material": "English bridle leather, brass buckle",
+    "care": "Condition twice yearly.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "44",
+    "slug": "piccadilly-linen-suit",
+    "name": "Piccadilly Linen Suit",
+    "description": "Unstructured two-piece in Irish linen with patch pockets for warm-weather tailoring.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "two-piece",
+    "price": 3600,
+    "currency": "USD",
+    "images": [
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg",
+      "/images/products/suit-navy-4.jpg",
+      "/images/products/suit-navy-5.jpg",
+      "/images/products/suit-navy-6.jpg",
+      "/images/products/suit-navy-1.jpg"
+    ],
+    "colors": [
+      "Midnight Navy",
+      "Cream"
+    ],
+    "sizes": [],
+    "material": "Irish linen, horn buttons",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "45",
+    "slug": "regent-street-double-breasted",
+    "name": "Regent Street Double-Breasted",
+    "description": "Six-on-two double-breasted suit in chalk-stripe Super 130s wool.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "two-piece",
+    "price": 4500,
+    "currency": "USD",
+    "images": [
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-4.jpg",
+      "/images/products/suit-navy-5.jpg",
+      "/images/products/suit-navy-6.jpg",
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg"
+    ],
+    "colors": [
+      "Charcoal"
+    ],
+    "sizes": [],
+    "material": "Super 130s wool",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "46",
+    "slug": "bond-street-dinner-jacket",
+    "name": "Bond Street Dinner Jacket",
+    "description": "Silk-shawl-collar dinner jacket in midnight barathea, sold separately.",
+    "gender": "men",
+    "category": "suits",
+    "subcategory": "tuxedo",
+    "price": 2800,
+    "currency": "USD",
+    "images": [
+      "/images/products/tuxedo-2.jpg",
+      "/images/products/tuxedo-3.jpg",
+      "/images/products/tuxedo-4.jpg",
+      "/images/products/tuxedo-1.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "sizes": [],
+    "material": "Barathea wool, silk facings",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "evening"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "47",
+    "slug": "kensington-herringbone-blazer",
+    "name": "Kensington Herringbone Blazer",
+    "description": "Soft-shouldered blazer in English herringbone with horn buttons.",
+    "gender": "women",
+    "category": "suits",
+    "subcategory": "blazer",
+    "price": 2200,
+    "currency": "USD",
+    "images": [
+      "/images/products/blazer-w-1.jpg",
+      "/images/products/blazer-w-2.jpg",
+      "/images/products/blazer-w-3.jpg",
+      "/images/products/suit-navy-3.jpg",
+      "/images/products/suit-navy-4.jpg",
+      "/images/products/suit-navy-5.jpg"
+    ],
+    "colors": [
+      "Midnight Navy"
+    ],
+    "sizes": [],
+    "material": "Wool herringbone",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "48",
+    "slug": "junior-row-short-suit",
+    "name": "Junior Row Short Suit",
+    "description": "Single-breasted short suit for formal occasions, cut with growing room.",
+    "gender": "kids",
+    "category": "suits",
+    "subcategory": "two-piece",
+    "price": 680,
+    "currency": "USD",
+    "images": [
+      "/images/products/kids-blazer-1.jpg",
+      "/images/products/kids-blazer-2.jpg",
+      "/images/products/kids-promo.jpg",
+      "/images/products/suit-navy-1.jpg",
+      "/images/products/suit-navy-2.jpg",
+      "/images/products/suit-navy-3.jpg"
+    ],
+    "colors": [
+      "Midnight Navy"
+    ],
+    "sizes": [
+      "Age ${s}"
+    ],
+    "material": "Wool blend",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "kids",
+      "kids"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "49",
+    "slug": "pall-mall-monk-strap",
+    "name": "Pall Mall Double Monk",
+    "description": "Hand-burnished double monk strap on leather sole with cap toe.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "oxford",
+    "price": 920,
+    "currency": "USD",
+    "images": [
+      "/images/products/oxford-black-1.jpg",
+      "/images/products/oxford-black-2.jpg",
+      "/images/products/oxford-black-3.jpg",
+      "/images/products/oxford-black-4.jpg",
+      "/images/products/oxford-burgundy-1.jpg",
+      "/images/products/oxford-burgundy-2.jpg"
+    ],
+    "colors": [
+      "Black",
+      "Burgundy"
+    ],
+    "sizes": [
+      "${s}"
+    ],
+    "material": "Calfskin, leather sole",
+    "care": "Use shoe trees. Polish monthly.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "50",
+    "slug": "st-james-tassel-loafer",
+    "name": "St James Tassel Loafer",
+    "description": "Full-grain tassel loafer with hand-stitched apron and leather sole.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "loafer",
+    "price": 820,
+    "currency": "USD",
+    "images": [
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-3.jpg",
+      "/images/products/loafer-2.jpg",
+      "/images/products/loafer-1.jpg",
+      "/images/products/loafer-3.jpg"
+    ],
+    "colors": [
+      "Burgundy",
+      "Black"
+    ],
+    "sizes": [
+      "${s}"
+    ],
+    "material": "Full-grain leather",
+    "care": "Brush and condition monthly.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "51",
+    "slug": "covent-garden-derby-boot",
+    "name": "Covent Garden Derby Boot",
+    "description": "Cap-toe derby boot in polished calfskin with storm welt.",
+    "gender": "men",
+    "category": "shoes",
+    "subcategory": "chelsea-boot",
+    "price": 1050,
+    "currency": "USD",
+    "images": [
+      "/images/products/oxford-black-4.jpg",
+      "/images/products/oxford-black-3.jpg",
+      "/images/products/oxford-black-2.jpg",
+      "/images/products/oxford-black-1.jpg",
+      "/images/products/oxford-black-3.jpg",
+      "/images/products/oxford-black-4.jpg"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "sizes": [
+      "${s}"
+    ],
+    "material": "Calfskin, Goodyear welt",
+    "care": "Use shoe trees.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "shoes",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "52",
+    "slug": "south-bank-espadrille",
+    "name": "South Bank Espadrille",
+    "description": "Hand-stitched espadrille in woven canvas with leather trim.",
+    "gender": "women",
+    "category": "shoes",
+    "subcategory": "sandal",
+    "price": 480,
+    "currency": "USD",
+    "images": [
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg",
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg",
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg"
+    ],
+    "colors": [
+      "Cream",
+      "Black"
+    ],
+    "sizes": [],
+    "material": "Canvas, jute sole",
+    "care": "Spot clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "shoes",
+      "shoes",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "53",
+    "slug": "hyde-park-pump",
+    "name": "Hyde Park 85mm Pump",
+    "description": "Classic pointed pump in patent calfskin with signature red leather sole.",
+    "gender": "women",
+    "category": "shoes",
+    "subcategory": "pump",
+    "price": 795,
+    "currency": "USD",
+    "images": [
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg",
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg",
+      "/images/products/pump-1.jpg",
+      "/images/products/pump-2.jpg"
+    ],
+    "colors": [
+      "Black",
+      "Burgundy"
+    ],
+    "sizes": [],
+    "material": "Patent calfskin",
+    "care": "Wipe with soft cloth.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "shoes",
+      "shoes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "54",
+    "slug": "green-park-messenger",
+    "name": "Green Park Messenger",
+    "description": "Cross-grain leather messenger with adjustable strap and interior laptop sleeve.",
+    "gender": "men",
+    "category": "bags",
+    "subcategory": "crossbody",
+    "price": 1280,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-3.jpg"
+    ],
+    "colors": [
+      "Midnight Navy",
+      "Black"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Grained calf leather",
+    "care": "Condition seasonally.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "bags",
+      "bags"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "55",
+    "slug": "chelsea-document-case",
+    "name": "Chelsea Document Case",
+    "description": "Slim document case with twin handles and detachable shoulder strap.",
+    "gender": "men",
+    "category": "bags",
+    "subcategory": "briefcase",
+    "price": 1650,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-1.jpg"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Bridle leather",
+    "care": "Condition twice yearly.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "bags",
+      "bags",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "56",
+    "slug": "mayfair-evening-clutch",
+    "name": "Mayfair Evening Minaudière",
+    "description": "Hard-case evening clutch with chain strap and silk interior.",
+    "gender": "women",
+    "category": "bags",
+    "subcategory": "clutch",
+    "price": 980,
+    "currency": "USD",
+    "images": [
+      "/images/products/clutch-1.jpg",
+      "/images/products/clutch-2.jpg",
+      "/images/products/clutch-3.jpg",
+      "/images/products/clutch-2.jpg",
+      "/images/products/clutch-1.jpg",
+      "/images/products/clutch-3.jpg"
+    ],
+    "colors": [
+      "Antique Gold",
+      "Black"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Metal frame, silk lining",
+    "care": "Store in dust bag.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "bags",
+      "bags"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "57",
+    "slug": "richmond-travel-backpack",
+    "name": "Richmond Travel Backpack",
+    "description": "Roll-top backpack in water-resistant canvas with leather base.",
+    "gender": "men",
+    "category": "bags",
+    "subcategory": "backpack",
+    "price": 1120,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg"
+    ],
+    "colors": [
+      "Midnight Navy"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Waxed canvas, leather trim",
+    "care": "Brush canvas; condition leather.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "bags",
+      "bags"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "58",
+    "slug": "notting-hill-mini-tote",
+    "name": "Notting Hill Mini Tote",
+    "description": "Compact structured tote with top handles and removable strap.",
+    "gender": "women",
+    "category": "bags",
+    "subcategory": "tote",
+    "price": 1350,
+    "currency": "USD",
+    "images": [
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-2.jpg",
+      "/images/products/bag-weekender-3.jpg",
+      "/images/products/bag-weekender-1.jpg",
+      "/images/products/bag-weekender-2.jpg"
+    ],
+    "colors": [
+      "Cream",
+      "Black"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Calf leather",
+    "care": "Condition seasonally.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "bags",
+      "bags",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "59",
+    "slug": "mayfair-oud",
+    "name": "Mayfair Oud",
+    "description": "Woody oriental with Assam oud, rose, and smoked vetiver.",
+    "gender": "men",
+    "category": "perfumes",
+    "subcategory": "eau-de-parfum",
+    "price": 320,
+    "currency": "USD",
+    "images": [
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-3.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "50 ml",
+      "100 ml"
+    ],
+    "material": "Eau de parfum",
+    "care": "Store away from light.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "perfumes",
+      "perfumes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "61",
+    "slug": "rose-mayfair-edt",
+    "name": "Rose Mayfair",
+    "description": "Floral eau de toilette with May rose, peony, and sandalwood.",
+    "gender": "women",
+    "category": "perfumes",
+    "subcategory": "eau-de-toilette",
+    "price": 240,
+    "currency": "USD",
+    "images": [
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-1.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "50 ml",
+      "100 ml"
+    ],
+    "material": "Eau de toilette",
+    "care": "Store away from light.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "perfumes",
+      "perfumes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "62",
+    "slug": "no17-extrait",
+    "name": "No. 17 Extrait",
+    "description": "Concentrated extrait of iris, leather, and ambergris accord.",
+    "gender": "women",
+    "category": "perfumes",
+    "subcategory": "extrait",
+    "price": 480,
+    "currency": "USD",
+    "images": [
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-2.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "30 ml"
+    ],
+    "material": "Extrait de parfum",
+    "care": "Store in original box.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "perfumes",
+      "perfumes"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "63",
+    "slug": "row-vetiver",
+    "name": "Row Vetiver",
+    "description": "Dry vetiver and cedarwood composition with a hint of grapefruit.",
+    "gender": "men",
+    "category": "perfumes",
+    "subcategory": "eau-de-parfum",
+    "price": 285,
+    "currency": "USD",
+    "images": [
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-2.jpg",
+      "/images/products/perfume-3.jpg",
+      "/images/products/perfume-1.jpg",
+      "/images/products/perfume-2.jpg"
+    ],
+    "colors": [
+      "Clear"
+    ],
+    "sizes": [
+      "50 ml",
+      "100 ml"
+    ],
+    "material": "Eau de parfum",
+    "care": "Store away from light.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "perfumes",
+      "perfumes",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "64",
+    "slug": "silk-grenadine-tie",
+    "name": "Silk Grenadine Tie",
+    "description": "Hand-rolled grenadine tie in Italian silk with wool interlining.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "tie",
+    "price": 195,
+    "currency": "USD",
+    "images": [
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-3.jpg"
+    ],
+    "colors": [
+      "Midnight Navy",
+      "Burgundy"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Italian silk",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "65",
+    "slug": "cashmere-scarf-charcoal",
+    "name": "Cashmere Scarf",
+    "description": "Lightweight cashmere scarf woven in the Scottish Borders.",
+    "gender": "women",
+    "category": "accessories",
+    "subcategory": "scarf",
+    "price": 420,
+    "currency": "USD",
+    "images": [
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-1.jpg"
+    ],
+    "colors": [
+      "Charcoal",
+      "Cream"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Cashmere",
+    "care": "Dry clean or hand wash cold.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "women",
+      "accessories",
+      "accessories",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "66",
+    "slug": "silk-pocket-square-set",
+    "name": "Silk Pocket Square Set",
+    "description": "Set of three hand-rolled silk pocket squares in seasonal prints.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "pocket-square",
+    "price": 285,
+    "currency": "USD",
+    "images": [
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-2.jpg"
+    ],
+    "colors": [
+      "Midnight Navy"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Silk",
+    "care": "Dry clean only.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "67",
+    "slug": "sterling-cufflinks",
+    "name": "Sterling Enamel Cufflinks",
+    "description": "Sterling silver cufflinks with hand-applied enamel in House colours.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "cufflinks",
+    "price": 395,
+    "currency": "USD",
+    "images": [
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg",
+      "/images/products/cufflinks-1.jpg",
+      "/images/products/cufflinks-2.jpg",
+      "/images/products/cufflinks-3.jpg"
+    ],
+    "colors": [
+      "Antique Gold",
+      "Midnight Navy"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Sterling silver, enamel",
+    "care": "Polish with soft cloth.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories"
+    ],
+    "isNew": false,
+    "isBespokeEligible": false
+  },
+  {
+    "id": "68",
+    "slug": "card-holder-calf",
+    "name": "Calfskin Card Holder",
+    "description": "Six-slot card holder in smooth calfskin with contrast stitching.",
+    "gender": "men",
+    "category": "accessories",
+    "subcategory": "wallets",
+    "price": 245,
+    "currency": "USD",
+    "images": [
+      "/images/products/wallet-1.jpg",
+      "/images/products/wallet-2.jpg",
+      "/images/products/wallet-3.jpg",
+      "/images/products/wallet-2.jpg",
+      "/images/products/wallet-1.jpg",
+      "/images/products/wallet-3.jpg"
+    ],
+    "colors": [
+      "Black",
+      "Burgundy"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "material": "Calfskin",
+    "care": "Condition occasionally.",
+    "shippingNote": "Complimentary express delivery on orders over $500.",
+    "tags": [
+      "accessories",
+      "accessories",
+      "new"
+    ],
+    "isNew": true,
+    "isBespokeEligible": false
+  }
+]

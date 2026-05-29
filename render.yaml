@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: savile-row
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /up
+    envVars:
+      - key: APP_NAME
+        value: Savile Row
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: FILESYSTEM_DISK
+        value: local
+      - key: PAYSTACK_CURRENCY
+        value: NGN
+      - key: PAYSTACK_PAYMENT_URL
+        value: https://api.paystack.co
+      - key: RUN_RENDER_SEEDER
+        value: false
