@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\{AdminNotification, Banner, BlogPost, Category, Coupon, Customer, Order, Product, ProductVariant, Role, Setting, TrafficLog};
+use App\Models\{AdminNotification, Banner, BlogPost, Brand, Category, Coupon, Customer, Order, Product, ProductVariant, Role, Setting, TrafficLog};
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -65,7 +65,55 @@ class AdminPageController extends Controller
 
         return back()->with('success', 'Category deleted.');
     }
-    public function brands() { return view('admin.crud-table', ['title' => 'Brands', 'description' => 'Fashion houses and supplier labels.', 'items' => \App\Models\Brand::paginate(15), 'columns' => ['name','slug','is_active']]); }
+    public function brands()
+    {
+        return view('admin.brands.index', [
+            'brands' => Brand::withCount('products')->orderBy('name')->paginate(15),
+        ]);
+    }
+
+    public function storeBrand(Request $request)
+    {
+        $data = $this->validateBrand($request);
+        $data['slug'] = $data['slug'] ?: Str::slug($data['name']);
+        $data['is_active'] = $request->boolean('is_active');
+
+        if ($request->hasFile('logo')) {
+            $data['logo_path'] = Storage::url($request->file('logo')->store('brands', 'public'));
+        }
+
+        Brand::create($data);
+
+        return back()->with('success', 'Brand created.');
+    }
+
+    public function updateBrand(Request $request, Brand $brand)
+    {
+        $data = $this->validateBrand($request, $brand);
+        $data['slug'] = $data['slug'] ?: Str::slug($data['name']);
+        $data['is_active'] = $request->boolean('is_active');
+
+        if ($request->hasFile('logo')) {
+            $this->deletePublicSettingFile($brand->logo_path);
+            $data['logo_path'] = Storage::url($request->file('logo')->store('brands', 'public'));
+        }
+
+        $brand->update($data);
+
+        return back()->with('success', 'Brand updated.');
+    }
+
+    public function destroyBrand(Brand $brand)
+    {
+        if ($brand->products()->exists()) {
+            return back()->withErrors(['brand' => 'Move or delete products assigned to this brand first.']);
+        }
+
+        $this->deletePublicSettingFile($brand->logo_path);
+        $brand->delete();
+
+        return back()->with('success', 'Brand deleted.');
+    }
     public function inventory() { return view('admin.inventory', ['variants' => ProductVariant::with('product')->paginate(15)]); }
     public function orders(Request $request) { return view('admin.orders.index', ['orders' => Order::with('customer')->latest()->paginate(15)]); }
     public function orderShow(Order $order) { return view('admin.orders.show', ['order' => $order->load(['customer','items','timeline.user'])]); }
@@ -298,6 +346,16 @@ class AdminPageController extends Controller
             'sort_order' => ['nullable', 'integer', 'min:0'],
             'is_featured' => ['nullable', 'boolean'],
             'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,avif', 'max:5120'],
+        ]);
+    }
+
+    private function validateBrand(Request $request, ?Brand $brand = null): array
+    {
+        return $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:brands,slug'.($brand ? ','.$brand->id : '')],
+            'is_active' => ['nullable', 'boolean'],
+            'logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,avif', 'max:5120'],
         ]);
     }
 }

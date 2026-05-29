@@ -27,6 +27,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::patch('/categories/{category}', [AdminPageController::class, 'updateCategory'])->name('categories.update');
     Route::delete('/categories/{category}', [AdminPageController::class, 'destroyCategory'])->name('categories.destroy');
     Route::get('/brands', [AdminPageController::class, 'brands'])->name('brands.index');
+    Route::post('/brands', [AdminPageController::class, 'storeBrand'])->name('brands.store');
+    Route::patch('/brands/{brand}', [AdminPageController::class, 'updateBrand'])->name('brands.update');
+    Route::delete('/brands/{brand}', [AdminPageController::class, 'destroyBrand'])->name('brands.destroy');
     Route::get('/inventory', [AdminPageController::class, 'inventory'])->name('inventory.index');
     Route::get('/orders', [AdminPageController::class, 'orders'])->name('orders.index');
     Route::get('/orders/{order}', [AdminPageController::class, 'orderShow'])->name('orders.show');
