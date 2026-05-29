@@ -52,6 +52,7 @@ class AppServiceProvider extends ServiceProvider
                 'eyebrow' => 'Mayfair house',
                 'title' => 'Savile Row',
                 'description' => 'Tailoring, leather goods, and private service from the house.',
+                'design' => 'modern',
                 'cta_label' => 'Shop new arrivals',
                 'cta_url' => '/collections/all/products',
                 'hero_image' => '/images/products/tailoring.jpg',

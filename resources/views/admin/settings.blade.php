@@ -17,6 +17,7 @@
         'eyebrow' => 'Mayfair house',
         'title' => 'Savile Row',
         'description' => 'Tailoring, leather goods, and private service from the house.',
+        'design' => 'modern',
         'cta_label' => 'Shop new arrivals',
         'cta_url' => '/collections/all/products',
         'hero_image' => '/images/products/tailoring.jpg',
@@ -82,9 +83,41 @@
         <section class="admin-card p-5">
             <p class="admin-kicker">Sidebar Designer</p>
             <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">Storefront menu drawer</h2>
-            <p class="mt-2 text-sm text-slate-500">Edit the storefront sidebar hero copy, background image, and the featured collection thumbnail cards.</p>
+            <p class="mt-2 text-sm text-slate-500">Choose between the image-led luxury drawer and a clean normal sidebar, then edit the copy and thumbnail content.</p>
 
             <div class="mt-6 grid gap-5">
+                <div>
+                    <label class="form-label fw-semibold text-slate-700">Sidebar theme design</label>
+                    <div class="grid gap-3 md:grid-cols-2">
+                        <label class="cursor-pointer rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-slate-400 has-[:checked]:border-slate-950 has-[:checked]:ring-2 has-[:checked]:ring-slate-950/10">
+                            <input type="radio" name="sidebar_design" value="modern" class="form-check-input" @checked(old('sidebar_design', $sidebar['design']) === 'modern')>
+                            <span class="ml-2 text-sm font-semibold text-slate-900">Modern picture sidebar</span>
+                            <span class="mt-3 block overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 p-3">
+                                <span class="block h-20 rounded-xl bg-[linear-gradient(135deg,#111,#5b4630)]"></span>
+                                <span class="mt-3 grid gap-2">
+                                    <span class="block h-8 rounded-lg bg-slate-700"></span>
+                                    <span class="block h-8 rounded-lg bg-slate-700"></span>
+                                </span>
+                            </span>
+                            <span class="mt-3 block text-xs leading-5 text-slate-500">Current editorial drawer with hero image and thumbnail cards.</span>
+                        </label>
+                        <label class="cursor-pointer rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition hover:border-slate-400 has-[:checked]:border-slate-950 has-[:checked]:ring-2 has-[:checked]:ring-slate-950/10">
+                            <input type="radio" name="sidebar_design" value="classic" class="form-check-input" @checked(old('sidebar_design', $sidebar['design']) === 'classic')>
+                            <span class="ml-2 text-sm font-semibold text-slate-900">Normal clean sidebar</span>
+                            <span class="mt-3 block rounded-2xl border border-slate-200 bg-[#fbfaf7] p-3">
+                                <span class="block h-4 w-28 bg-slate-950"></span>
+                                <span class="mt-4 grid gap-2">
+                                    <span class="block h-9 border border-slate-300 bg-white"></span>
+                                    <span class="block h-9 border border-slate-300 bg-white"></span>
+                                    <span class="block h-9 border border-slate-300 bg-white"></span>
+                                </span>
+                            </span>
+                            <span class="mt-3 block text-xs leading-5 text-slate-500">No picture-heavy hero. Simple links, categories, services, and CTA.</span>
+                        </label>
+                    </div>
+                    @error('sidebar_design')<p class="mt-2 text-sm font-semibold text-red-600">{{ $message }}</p>@enderror
+                </div>
+
                 <div class="grid gap-4 md:grid-cols-2">
                     <div>
                         <label class="form-label fw-semibold text-slate-700">Sidebar eyebrow</label>
