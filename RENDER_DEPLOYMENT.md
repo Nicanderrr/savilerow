@@ -55,6 +55,9 @@ PAYSTACK_SECRET_KEY=your-secret-key
 PAYSTACK_CURRENCY=NGN
 PAYSTACK_PAYMENT_URL=https://api.paystack.co
 RUN_RENDER_SEEDER=false
+ADMIN_EMAIL=admin@mail.com
+ADMIN_PASSWORD=password
+ADMIN_NAME=Savile Row Admin
 ```
 
 Use your current local `APP_KEY`; do not regenerate it after users/orders exist.

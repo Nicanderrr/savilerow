@@ -20,11 +20,12 @@ class DatabaseSeeder extends Seeder
         $manager->permissions()->sync($permissions->except(['settings.manage','staff.manage'])->pluck('id'));
         $staff->permissions()->sync($permissions->only(['dashboard.view','orders.manage','customers.manage','inventory.manage'])->pluck('id'));
 
-        $admin = User::firstOrCreate(['email' => 'admin@mail.com'], [
+        $admin = User::updateOrCreate(['email' => 'admin@mail.com'], [
             'name' => 'Savile Row Admin',
             'password' => Hash::make('password'),
             'email_verified_at' => now(),
         ]);
+        User::where('email', 'admin@savilerow.test')->delete();
         $admin->roles()->syncWithoutDetaching([$super->id]);
 
         $brand = Brand::firstOrCreate(['slug' => 'savile-row'], ['name' => 'Savile Row', 'is_active' => true]);

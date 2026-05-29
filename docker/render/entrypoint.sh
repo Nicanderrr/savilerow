@@ -43,6 +43,7 @@ rm -f public/hot || true
 
 php artisan storage:link || true
 php artisan migrate --force || true
+php artisan app:ensure-default-admin || true
 
 if [ "$RUN_RENDER_SEEDER" = "true" ]; then
   php artisan db:seed --force || true

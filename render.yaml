@@ -28,3 +28,9 @@ services:
         value: https://api.paystack.co
       - key: RUN_RENDER_SEEDER
         value: false
+      - key: ADMIN_EMAIL
+        value: admin@mail.com
+      - key: ADMIN_PASSWORD
+        value: password
+      - key: ADMIN_NAME
+        value: Savile Row Admin
