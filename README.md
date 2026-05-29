@@ -1,4 +1,4 @@
-﻿# Savile Row Laravel Storefront
+# Savile Row Laravel Storefront
 
 Laravel storefront converted from the original Next.js implementation. The app keeps the luxury storefront UI, product catalog, image/video assets, Blade routes, and localStorage demo cart.
 
@@ -55,8 +55,9 @@ Default admin login:
 
 ```text
 URL: http://127.0.0.1:8000/admin
-Email: admin@savilerow.test
+Email: admin@mail.com
 Password: password
 ```
 
 The admin module includes RBAC tables, product/catalog management, inventory, orders, customers, promotions, CMS, analytics, notifications, staff roles, settings, dark mode, and a responsive collapsible sidebar.
+

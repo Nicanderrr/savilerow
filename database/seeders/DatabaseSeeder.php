@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $manager->permissions()->sync($permissions->except(['settings.manage','staff.manage'])->pluck('id'));
         $staff->permissions()->sync($permissions->only(['dashboard.view','orders.manage','customers.manage','inventory.manage'])->pluck('id'));
 
-        $admin = User::firstOrCreate(['email' => 'admin@savilerow.test'], [
+        $admin = User::firstOrCreate(['email' => 'admin@mail.com'], [
             'name' => 'Savile Row Admin',
             'password' => Hash::make('password'),
             'email_verified_at' => now(),

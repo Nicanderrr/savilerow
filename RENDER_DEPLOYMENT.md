@@ -80,7 +80,7 @@ Traffic logs and analytics require the database to remain available.
 After the first deploy and migration/seed, use:
 
 ```txt
-admin@savilerow.test
+admin@mail.com
 password
 ```
 
@@ -101,3 +101,4 @@ Or run the seeder once from a shell:
 ```bash
 php artisan db:seed --force
 ```
+

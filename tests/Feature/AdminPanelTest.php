@@ -20,7 +20,7 @@ class AdminPanelTest extends TestCase
     {
         $this->seed();
 
-        $user = User::where('email', 'admin@savilerow.test')->firstOrFail();
+        $user = User::where('email', 'admin@mail.com')->firstOrFail();
 
         $product = Product::firstOrFail();
 
