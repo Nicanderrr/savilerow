@@ -3,9 +3,11 @@
         <div class="flex items-center justify-between"><p class="font-serif text-2xl uppercase">Search</p><button data-close="#search-overlay" class="grid h-10 w-10 place-items-center" aria-label="Close search">@include('partials.icon', ['name' => 'close', 'class' => 'h-6 w-6'])</button></div>
         <form action="/collections/all/products" class="mt-6"><input name="search" autofocus class="w-full border-b border-black py-3 text-xl outline-none" placeholder="Search the collection"></form>
         <div class="mt-5 flex flex-wrap gap-2 text-[11px] uppercase tracking-widest">
-            <a class="border border-cl-gray-mid px-3 py-2" href="/collections/men/suits">Men suits</a>
-            <a class="border border-cl-gray-mid px-3 py-2" href="/collections/women/bags">Women bags</a>
-            <a class="border border-cl-gray-mid px-3 py-2" href="/collections/all/products">New arrivals</a>
+            @forelse(array_slice($menuSidebar['facets'] ?? [], 0, 3) as $facet)
+                <a class="border border-cl-gray-mid px-3 py-2" href="{{ $facet['href'] }}">{{ $facet['label'] }}</a>
+            @empty
+                <a class="border border-cl-gray-mid px-3 py-2" href="/collections/all/products">All products</a>
+            @endforelse
         </div>
     </div>
 </div>

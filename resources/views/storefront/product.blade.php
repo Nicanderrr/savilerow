@@ -25,7 +25,7 @@
             </section>
 
             <aside class="pdp-panel">
-                <p class="text-label text-cl-muted">{{ $product['category'] }}</p>
+                <p class="text-label text-cl-muted">{{ $product['categoryName'] ?? Str::headline($product['category']) }}</p>
                 <h1 class="mt-3 font-serif text-4xl uppercase leading-[0.95] tracking-tight sm:text-5xl">{{ $product['name'] }}</h1>
                 <p class="mt-5 font-serif text-2xl">{{ \App\Support\Catalog::money($product['price']) }}</p>
                 <p class="mt-6 text-[13px] leading-relaxed text-cl-muted">{{ $product['description'] }}</p>

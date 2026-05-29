@@ -40,19 +40,21 @@
             <p class="store-subcopy max-w-md">A tighter commercial flow with editorial collections, clear entry points, and service promises visible before the customer reaches checkout.</p>
         </div>
         <div class="mx-auto grid max-w-[1600px] gap-4 md:grid-cols-2">
-            @foreach([
-                ['Spring tailoring','Men suits','/collections/men/suits','/images/products/men-promo.jpg'],
-                ['Occasion dressing','Women suits','/collections/women/suits','/images/products/blazer-w-1.jpg'],
-            ] as [$eyebrow, $title, $href, $image])
-                <a href="{{ $href }}" class="home-collection-card">
-                    <img src="{{ $image }}" alt="{{ $title }}">
+            @forelse($collectionCards as $card)
+                <a href="{{ $card['href'] }}" class="home-collection-card">
+                    <img src="{{ $card['image'] ?: '/images/products/hero-poster.jpg' }}" alt="{{ $card['label'] }}">
                     <div class="home-collection-card-content">
-                        <p class="text-label text-white/75">{{ $eyebrow }}</p>
-                        <h3 class="mt-3 font-serif text-4xl uppercase leading-none md:text-5xl">{{ $title }}</h3>
+                        <p class="text-label text-white/75">{{ $card['count'] }} pieces</p>
+                        <h3 class="mt-3 font-serif text-4xl uppercase leading-none md:text-5xl">{{ $card['label'] }}</h3>
                         <span class="mt-8 inline-block text-label underline-offset-4 group-hover:underline">Discover</span>
                     </div>
                 </a>
-            @endforeach
+            @empty
+                <div class="store-empty-state md:col-span-2">
+                    <p class="font-serif text-3xl uppercase">No collections yet</p>
+                    <p class="mt-3 text-sm text-cl-muted">Publish products and categories from the admin panel to populate this section.</p>
+                </div>
+            @endforelse
         </div>
     </section>
 
@@ -88,14 +90,21 @@
             </div>
         </div>
         <div class="grid grid-cols-2">
-            @foreach([['Leather goods','/collections/women/bags','/images/products/bag-promo.jpg'],['Footwear','/collections/men/shoes','/images/products/shoe-promo.jpg'],['Bespoke tailoring','/bespoke','/images/products/tailoring.jpg'],['Boutique visit','/boutique','/images/products/store.jpg']] as [$title,$href,$image])
-                <a href="{{ $href }}" class="store-editorial-card aspect-square">
-                    <img src="{{ $image }}" alt="{{ $title }}">
+            @forelse($editorialCards as $card)
+                <a href="{{ $card['href'] }}" class="store-editorial-card aspect-square">
+                    <img src="{{ $card['image'] ?: '/images/products/hero-poster.jpg' }}" alt="{{ $card['label'] }}">
                     <div class="store-editorial-content">
-                        <p class="font-serif text-xl uppercase leading-tight">{{ $title }}</p>
+                        <p class="font-serif text-xl uppercase leading-tight">{{ $card['label'] }}</p>
                     </div>
                 </a>
-            @endforeach
+            @empty
+                <a href="/collections/all/products" class="store-editorial-card aspect-square">
+                    <img src="/images/products/hero-poster.jpg" alt="All products">
+                    <div class="store-editorial-content">
+                        <p class="font-serif text-xl uppercase leading-tight">All products</p>
+                    </div>
+                </a>
+            @endforelse
         </div>
     </section>
 </main>

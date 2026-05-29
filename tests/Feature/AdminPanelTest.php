@@ -22,7 +22,14 @@ class AdminPanelTest extends TestCase
 
         $user = User::where('email', 'admin@mail.com')->firstOrFail();
 
-        $product = Product::firstOrFail();
+        $product = Product::create([
+            'name' => 'Test Product',
+            'slug' => 'test-product',
+            'sku' => 'TEST-PRODUCT',
+            'price' => 100,
+            'status' => 'published',
+            'published_at' => now(),
+        ]);
 
         foreach (['/admin', '/admin/products', '/admin/products/create', "/admin/products/{$product->id}", "/admin/products/{$product->id}/edit", '/admin/orders', '/admin/customers', '/admin/settings'] as $path) {
             $this->actingAs($user)->get($path)->assertOk();

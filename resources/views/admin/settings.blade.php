@@ -8,7 +8,7 @@
         'eyebrow' => 'New collection',
         'title' => 'Spring / Summer 2026',
         'button_label' => 'Discover',
-        'button_url' => '/collections/men/suits',
+        'button_url' => '/collections/all/products',
         'media_type' => 'video',
         'image' => '/images/products/hero-poster.jpg',
         'video' => '/video/hero1.mp4',
@@ -21,9 +21,9 @@
         'cta_url' => '/collections/all/products',
         'hero_image' => '/images/products/tailoring.jpg',
         'cards' => [
-            ['label' => 'Men tailoring', 'url' => '/collections/men/suits', 'image' => '/images/products/men-promo.jpg'],
-            ['label' => 'Women tailoring', 'url' => '/collections/women/suits', 'image' => '/images/products/blazer-w-1.jpg'],
-            ['label' => 'Leather goods', 'url' => '/collections/women/bags', 'image' => '/images/products/bag-promo.jpg'],
+            ['label' => 'All products', 'url' => '/collections/all/products', 'image' => '/images/products/hero-poster.jpg'],
+            ['label' => 'Featured products', 'url' => '/collections/all/products', 'image' => '/images/products/hero-poster.jpg'],
+            ['label' => 'New arrivals', 'url' => '/collections/all/products', 'image' => '/images/products/hero-poster.jpg'],
         ],
     ], $settings->get('menu_sidebar')?->value ?? []);
 @endphp
@@ -138,7 +138,7 @@
                                     </div>
                                     <div class="mt-3 grid gap-2">
                                         <input name="sidebar_cards[{{ $index }}][label]" value="{{ old("sidebar_cards.$index.label", $card['label']) }}" class="admin-input" placeholder="Card label" required>
-                                        <input name="sidebar_cards[{{ $index }}][url]" value="{{ old("sidebar_cards.$index.url", $card['url']) }}" class="admin-input" placeholder="/collections/men/suits" required>
+                                        <input name="sidebar_cards[{{ $index }}][url]" value="{{ old("sidebar_cards.$index.url", $card['url']) }}" class="admin-input" placeholder="/collections/all/products" required>
                                         <label class="admin-btn-secondary w-full cursor-pointer justify-center py-2">
                                             Upload thumbnail
                                             <input type="file" name="sidebar_card_images[{{ $index }}]" accept="image/jpeg,image/png,image/webp,image/avif" class="sr-only" data-single-image-preview-input="#sidebar-card-preview-{{ $index }}">

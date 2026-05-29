@@ -11,7 +11,7 @@
             <div class="flex w-20 items-center justify-end gap-2 text-[12px] sm:min-w-[100px] sm:gap-3 md:min-w-[200px] md:gap-5 md:text-sm">
                 <button type="button" data-toggle="#search-overlay" aria-label="Search" class="grid h-9 w-9 place-items-center">@include('partials.icon', ['name' => 'search', 'class' => 'h-5 w-5'])</button>
                 <a href="/market" aria-label="Market" class="hidden sm:grid h-9 w-9 place-items-center">@include('partials.icon', ['name' => 'account', 'class' => 'h-5 w-5'])</a>
-                <a href="/collections/men/suits" class="relative hidden h-9 w-9 place-items-center sm:grid" aria-label="Wishlist">@include('partials.icon', ['name' => 'heart', 'class' => 'h-5 w-5'])</a>
+                <a href="/collections/all/products" class="relative hidden h-9 w-9 place-items-center sm:grid" aria-label="Wishlist">@include('partials.icon', ['name' => 'heart', 'class' => 'h-5 w-5'])</a>
                 <button type="button" data-toggle="#bag-drawer" class="relative grid h-9 w-9 place-items-center" aria-label="Shopping bag">@include('partials.icon', ['name' => 'bag', 'class' => 'h-5 w-5'])<span data-cart-count class="absolute -right-1 -top-1 hidden h-4 min-w-4 rounded-full bg-cl-red px-1 text-center text-[9px] leading-4 text-white">0</span></button>
             </div>
         </div>

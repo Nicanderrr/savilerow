@@ -23,6 +23,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::post('/products/{product}/duplicate', [ProductController::class, 'duplicate'])->name('products.duplicate');
     Route::resource('products', ProductController::class);
     Route::get('/categories', [AdminPageController::class, 'categories'])->name('categories.index');
+    Route::post('/categories', [AdminPageController::class, 'storeCategory'])->name('categories.store');
+    Route::patch('/categories/{category}', [AdminPageController::class, 'updateCategory'])->name('categories.update');
+    Route::delete('/categories/{category}', [AdminPageController::class, 'destroyCategory'])->name('categories.destroy');
     Route::get('/brands', [AdminPageController::class, 'brands'])->name('brands.index');
     Route::get('/inventory', [AdminPageController::class, 'inventory'])->name('inventory.index');
     Route::get('/orders', [AdminPageController::class, 'orders'])->name('orders.index');

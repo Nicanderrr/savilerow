@@ -186,8 +186,9 @@ class CheckoutController extends Controller
             $product = $line['product'];
 
             $order->items()->create([
+                'product_id' => $product['id'] ?? null,
                 'product_name' => $product['name'],
-                'sku' => Str::upper($product['slug']),
+                'sku' => $product['sku'] ?? Str::upper($product['slug']),
                 'quantity' => $line['quantity'],
                 'unit_price' => $product['price'],
                 'total' => $line['total'],

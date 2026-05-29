@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setting;
+use App\Models\{Category, Setting};
 use App\Support\Catalog;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
@@ -21,11 +21,13 @@ class StorefrontController extends Controller
                 'eyebrow' => 'New collection',
                 'title' => 'Spring / Summer 2026',
                 'button_label' => 'Discover',
-                'button_url' => '/collections/men/suits',
+                'button_url' => '/collections/all/products',
                 'media_type' => 'video',
                 'image' => '/images/products/hero-poster.jpg',
                 'video' => '/video/hero1.mp4',
             ], $hero),
+            'collectionCards' => array_slice(Catalog::facets(), 0, 2),
+            'editorialCards' => array_slice(Catalog::facets(), 0, 4),
         ]);
     }
 
@@ -45,9 +47,9 @@ class StorefrontController extends Controller
 
     public function collection(string $gender, string $category): View
     {
-        $collection = Catalog::collection($gender, $category);
+        abort_if($category !== 'products' && ! Category::where('slug', $category)->exists(), 404);
 
-        abort_if(empty($collection), 404);
+        $collection = Catalog::collection($gender, $category);
 
         $products = $this->filterProducts($collection);
 
@@ -106,14 +108,9 @@ class StorefrontController extends Controller
 
     private function facets(): array
     {
-        return [
+        return array_merge([
             ['label' => 'All products', 'href' => route('collections.all'), 'key' => 'all-products'],
-            ['label' => 'Men suits', 'href' => route('collections.show', ['gender' => 'men', 'category' => 'suits']), 'key' => 'men-suits'],
-            ['label' => 'Men shoes', 'href' => route('collections.show', ['gender' => 'men', 'category' => 'shoes']), 'key' => 'men-shoes'],
-            ['label' => 'Women bags', 'href' => route('collections.show', ['gender' => 'women', 'category' => 'bags']), 'key' => 'women-bags'],
-            ['label' => 'Women perfumes', 'href' => route('collections.show', ['gender' => 'women', 'category' => 'perfumes']), 'key' => 'women-perfumes'],
-            ['label' => 'Kids tailoring', 'href' => route('collections.show', ['gender' => 'kids', 'category' => 'suits']), 'key' => 'kids-suits'],
-        ];
+        ], Catalog::facets());
     }
 }
 

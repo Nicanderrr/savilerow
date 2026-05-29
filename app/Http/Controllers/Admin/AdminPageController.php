@@ -7,10 +7,64 @@ use App\Models\{AdminNotification, Banner, BlogPost, Category, Coupon, Customer,
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class AdminPageController extends Controller
 {
-    public function categories() { return view('admin.crud-table', ['title' => 'Categories', 'description' => 'Nested merchandising taxonomy.', 'items' => Category::with('parent')->paginate(15), 'columns' => ['name','slug','sort_order','is_featured']]); }
+    public function categories()
+    {
+        return view('admin.categories.index', [
+            'categories' => Category::with('parent')->orderBy('sort_order')->orderBy('name')->paginate(15),
+            'parents' => Category::orderBy('name')->get(),
+        ]);
+    }
+
+    public function storeCategory(Request $request)
+    {
+        $data = $this->validateCategory($request);
+        $data['slug'] = $data['slug'] ?: Str::slug($data['name']);
+        $data['is_featured'] = $request->boolean('is_featured');
+
+        if ($request->hasFile('image')) {
+            $data['image_path'] = Storage::url($request->file('image')->store('categories', 'public'));
+        }
+
+        Category::create($data);
+
+        return back()->with('success', 'Category created.');
+    }
+
+    public function updateCategory(Request $request, Category $category)
+    {
+        $data = $this->validateCategory($request, $category);
+        $data['slug'] = $data['slug'] ?: Str::slug($data['name']);
+        $data['is_featured'] = $request->boolean('is_featured');
+
+        if ((int) ($data['parent_id'] ?? 0) === $category->id) {
+            return back()->withErrors(['parent_id' => 'A category cannot be its own parent.']);
+        }
+
+        if ($request->hasFile('image')) {
+            $this->deletePublicSettingFile($category->image_path);
+            $data['image_path'] = Storage::url($request->file('image')->store('categories', 'public'));
+        }
+
+        $category->update($data);
+
+        return back()->with('success', 'Category updated.');
+    }
+
+    public function destroyCategory(Category $category)
+    {
+        if ($category->products()->exists()) {
+            return back()->withErrors(['category' => 'Move or delete products in this category first.']);
+        }
+
+        $this->deletePublicSettingFile($category->image_path);
+        $category->delete();
+
+        return back()->with('success', 'Category deleted.');
+    }
     public function brands() { return view('admin.crud-table', ['title' => 'Brands', 'description' => 'Fashion houses and supplier labels.', 'items' => \App\Models\Brand::paginate(15), 'columns' => ['name','slug','is_active']]); }
     public function inventory() { return view('admin.inventory', ['variants' => ProductVariant::with('product')->paginate(15)]); }
     public function orders(Request $request) { return view('admin.orders.index', ['orders' => Order::with('customer')->latest()->paginate(15)]); }
@@ -139,7 +193,7 @@ class AdminPageController extends Controller
             'eyebrow' => 'New collection',
             'title' => 'Spring / Summer 2026',
             'button_label' => 'Discover',
-            'button_url' => '/collections/men/suits',
+            'button_url' => '/collections/all/products',
             'media_type' => 'video',
             'image' => '/images/products/hero-poster.jpg',
             'video' => '/video/hero1.mp4',
@@ -178,9 +232,9 @@ class AdminPageController extends Controller
             'cta_url' => '/collections/all/products',
             'hero_image' => '/images/products/tailoring.jpg',
             'cards' => [
-                ['label' => 'Men tailoring', 'url' => '/collections/men/suits', 'image' => '/images/products/men-promo.jpg'],
-                ['label' => 'Women tailoring', 'url' => '/collections/women/suits', 'image' => '/images/products/blazer-w-1.jpg'],
-                ['label' => 'Leather goods', 'url' => '/collections/women/bags', 'image' => '/images/products/bag-promo.jpg'],
+                ['label' => 'All products', 'url' => '/collections/all/products', 'image' => '/images/products/hero-poster.jpg'],
+                ['label' => 'Featured products', 'url' => '/collections/all/products', 'image' => '/images/products/hero-poster.jpg'],
+                ['label' => 'New arrivals', 'url' => '/collections/all/products', 'image' => '/images/products/hero-poster.jpg'],
             ],
         ], $sidebar->value ?? []);
 
@@ -224,5 +278,17 @@ class AdminPageController extends Controller
         }
 
         Storage::disk('public')->delete(str($path)->after('/storage/')->toString());
+    }
+
+    private function validateCategory(Request $request, ?Category $category = null): array
+    {
+        return $request->validate([
+            'parent_id' => ['nullable', 'exists:categories,id'],
+            'name' => ['required', 'string', 'max:255'],
+            'slug' => ['nullable', 'string', 'max:255', 'unique:categories,slug'.($category ? ','.$category->id : '')],
+            'sort_order' => ['nullable', 'integer', 'min:0'],
+            'is_featured' => ['nullable', 'boolean'],
+            'image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,avif', 'max:5120'],
+        ]);
     }
 }

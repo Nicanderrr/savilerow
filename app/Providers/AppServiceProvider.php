@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use App\Models\Setting;
+use App\Support\Catalog;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -36,10 +37,16 @@ class AppServiceProvider extends ServiceProvider
             return Limit::perMinute(3)->by($request->ip());
         });
 
-        View::composer('partials.header', function ($view) {
+        View::composer(['partials.header', 'partials.chrome'], function ($view) {
             $menu = Schema::hasTable('settings')
                 ? Setting::where('group', 'themes')->where('key', 'menu_sidebar')->first()?->value ?? []
                 : [];
+            $facets = Catalog::facets();
+            $cards = collect($facets)->take(3)->map(fn (array $facet) => [
+                'label' => $facet['label'],
+                'url' => $facet['href'],
+                'image' => $facet['image'] ?: '/images/products/hero-poster.jpg',
+            ])->values()->all();
 
             $view->with('menuSidebar', array_merge([
                 'eyebrow' => 'Mayfair house',
@@ -48,11 +55,8 @@ class AppServiceProvider extends ServiceProvider
                 'cta_label' => 'Shop new arrivals',
                 'cta_url' => '/collections/all/products',
                 'hero_image' => '/images/products/tailoring.jpg',
-                'cards' => [
-                    ['label' => 'Men tailoring', 'url' => '/collections/men/suits', 'image' => '/images/products/men-promo.jpg'],
-                    ['label' => 'Women tailoring', 'url' => '/collections/women/suits', 'image' => '/images/products/blazer-w-1.jpg'],
-                    ['label' => 'Leather goods', 'url' => '/collections/women/bags', 'image' => '/images/products/bag-promo.jpg'],
-                ],
+                'cards' => $cards,
+                'facets' => $facets,
             ], $menu));
         });
     }

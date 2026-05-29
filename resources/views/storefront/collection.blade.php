@@ -2,7 +2,7 @@
 @section('title', $title.' | Savile Row')
 @section('content')
 @php
-    $activeKey = $gender === 'all' ? 'all-products' : $gender.'-'.$category;
+    $activeKey = $category === 'products' ? 'all-products' : 'all-'.$category;
     $sort = request('sort', 'featured');
 @endphp
 <main id="main-content" class="bg-cl-white">
