@@ -35,6 +35,7 @@ fi
 php artisan config:clear || true
 php artisan route:clear || true
 php artisan view:clear || true
+rm -f public/hot || true
 
 php artisan storage:link || true
 php artisan migrate --force || true
