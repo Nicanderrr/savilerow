@@ -5,16 +5,25 @@ if [ -n "$RENDER_EXTERNAL_URL" ] && [ -z "$APP_URL" ]; then
   export APP_URL="$RENDER_EXTERNAL_URL"
 fi
 
+# Render-safe defaults for demo deployments.
+if [ -n "$RENDER_EXTERNAL_URL" ]; then
+  export LOG_CHANNEL=stderr
+  export SESSION_DRIVER="${SESSION_DRIVER:-file}"
+  export CACHE_STORE="${CACHE_STORE:-file}"
+  export QUEUE_CONNECTION="${QUEUE_CONNECTION:-sync}"
+fi
+
+# If MySQL is left on localhost in Render, auto-fallback to sqlite demo mode.
+if [ -n "$RENDER_EXTERNAL_URL" ] && [ "$DB_CONNECTION" = "mysql" ] && { [ -z "$DB_HOST" ] || [ "$DB_HOST" = "127.0.0.1" ] || [ "$DB_HOST" = "localhost" ]; }; then
+  export DB_CONNECTION=sqlite
+  export DB_DATABASE=/var/www/html/database/database.sqlite
+fi
+
 # Render containers can create files as root during boot commands.
 # Ensure Laravel writable paths stay writable for apache/www-data.
 mkdir -p storage/logs storage/framework/{cache,sessions,views} bootstrap/cache database
 chown -R www-data:www-data storage bootstrap/cache database || true
 chmod -R ug+rwx storage bootstrap/cache database || true
-
-# Prefer stderr on hosted containers unless explicitly overridden.
-if [ -z "$LOG_CHANNEL" ]; then
-  export LOG_CHANNEL=stderr
-fi
 
 # For sqlite demo mode, create database file if missing.
 if [ "$DB_CONNECTION" = "sqlite" ] && [ -n "$DB_DATABASE" ]; then
